@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovative Investment Professionals — Precision Financial Planning</title>
+<meta name="description" content="Innovative Investment Professionals provides expert retirement planning, annuities, life insurance, and financial education seminars.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:         #ffffff;
+  --bg2:        #f9f9fb;
+  --bg3:        #f3f0f8;
+  --card:       rgba(92,40,145,0.05);
+  --card-hover: rgba(92,40,145,0.10);
+  --border:     rgba(147,83,200,0.18);
+  --border-h:   rgba(92,40,145,0.38);
+  --accent:     #5c2891;
+  --accent-l:   #9353c8;
+  --accent-d:   #3d1a60;
+  --glow:       rgba(92,40,145,0.25);
+  --text:       #1a1a2e;
+  --text-2:     #4a3a6a;
+  --text-3:     #9a88b8;
+  --white:      #1a1a2e;
+  --r:          18px;
+  --r-sm:       10px;
+}
+
+html { scroll-behavior: smooth; }
+::selection { background: var(--accent); color: #fff; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f0eafa; }
+::-webkit-scrollbar-thumb { background: rgba(92,40,145,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(92,40,145,0.5); }
+
+/* ── Loader ── */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-atom {
+  width: 60px; height: 60px;
+}
+.loader-atom svg { width: 100%; height: 100%; }
+.loader-brand {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.loader-bar-wrap {
+  width: 200px;
+  height: 3px;
+  background: rgba(92,40,145,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-l));
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.15s ease;
+}
+.loader-pct {
+  font-size: 12px;
+  color: var(--text-3);
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+}
+
+/* ── Starscape ── */
+#starscape {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+/* ── Scroll progress ── */
+#progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-d), var(--accent-l), #c084fc);
+  z-index: 1000;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px var(--glow);
+}
+
+/* ── Navbar ── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 0 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+#navbar.scrolled {
+  top: 12px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: min(960px, calc(100vw - 32px));
+  border-radius: 100px;
+  height: 58px;
+  padding: 0 28px;
+  background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(92,40,145,0.12), 0 0 0 1px rgba(147,83,200,0.1);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.nav-atom { width: 34px; height: 34px; flex-shrink: 0; }
+.nav-wordmark { display: flex; flex-direction: column; gap: 0; }
+.nav-word-top {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; color: var(--accent-l);
+  text-transform: uppercase; line-height: 1;
+}
+.nav-word-bot {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 2.5px; color: var(--text-2);
+  text-transform: uppercase; line-height: 1.4;
+}
+.nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+.nav-links a {
+  padding: 8px 16px; font-size: 13px; font-weight: 500;
+  color: var(--text-2); text-decoration: none;
+  border-radius: 100px; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--text); background: rgba(92,40,145,0.06); }
+.nav-cta {
+  padding: 9px 22px !important; background: var(--accent) !important;
+  color: white !important; box-shadow: 0 0 20px rgba(92,40,145,0.3);
+}
+.nav-cta:hover { background: var(--accent-l) !important; }
+/* ── Nav Dropdown ── */
+.nav-dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(255,255,255,0.98); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(92,40,145,0.15);
+  padding: 8px; min-width: 200px; list-style: none;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s; z-index: 600;
+}
+.nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.dropdown-menu::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+.dropdown-menu a { display: block; padding: 9px 14px !important; border-radius: 8px !important; font-size: 13px; font-weight: 500; color: var(--text-2); white-space: nowrap; transition: all 0.15s; }
+.dropdown-menu a:hover { background: rgba(92,40,145,0.08) !important; color: var(--accent) !important; }
+.nav-dropdown > a::after { content: ' ⌄'; font-size: 10px; opacity: 0.6; vertical-align: 1px; }
+@media(max-width:680px) { .nav-links { display: none; } }
+
+/* ── Hero ── */
+#hero {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+}
+.hero-orb-1 {
+  position: absolute; top: 10%; left: 10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle,rgba(92,40,145,0.07),transparent 70%);
+  pointer-events: none;
+}
+.hero-orb-2 {
+  position: absolute; bottom: 10%; right: 5%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle,rgba(147,83,200,0.05),transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px;
+  background: rgba(92,40,145,0.08);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  color: var(--accent-l); text-transform: uppercase;
+  margin-bottom: 24px; position: relative; z-index: 1;
+}
+.hero-eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #22c55e; box-shadow: 0 0 8px #22c55e;
+  animation: blink 2s ease-in-out infinite;
+  will-change: opacity;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero-title {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 700; line-height: 1.08;
+  margin-bottom: 20px; color: var(--text);
+  position: relative; z-index: 1;
+}
+.hero-title span {
+  background: linear-gradient(135deg, var(--accent), var(--accent-l));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 18px; color: var(--text-2);
+  line-height: 1.75; margin-bottom: 36px;
+  max-width: 540px; position: relative; z-index: 1;
+}
+.hero-buttons {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  justify-content: center; position: relative; z-index: 1;
+  margin-bottom: 60px;
+}
+.btn-primary {
+  padding: 14px 30px; background: var(--accent); color: white;
+  border: none; border-radius: 100px; font-size: 15px; font-weight: 600;
+  cursor: pointer; text-decoration: none; display: inline-flex;
+  align-items: center; gap: 8px;
+  box-shadow: 0 4px 30px rgba(92,40,145,0.3);
+  transition: all 0.25s;
+}
+.btn-primary:hover { background: var(--accent-l); transform: translateY(-2px); }
+.btn-secondary {
+  padding: 14px 30px; background: transparent; color: var(--text);
+  border: 1px solid var(--border); border-radius: 100px;
+  font-size: 15px; font-weight: 500; cursor: pointer;
+  text-decoration: none; transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--border-h); background: rgba(92,40,145,0.05); }
+.scroll-hint {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-3);
+}
+.scroll-hint-arrow {
+  width: 24px; height: 24px;
+  border-right: 2px solid var(--text-3);
+  border-bottom: 2px solid var(--text-3);
+  transform: rotate(45deg);
+  animation: arrowBounce 1.8s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes arrowBounce {
+  0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(6px)}
+}
+
+/* ── Scroll Animation Section ── */
+#scroll-anim {
+  position: relative;
+  z-index: 1;
+}
+.scroll-container {
+  height: 350vh;
+  position: relative;
+}
+@media(max-width:768px) { .scroll-container { height: 280vh; } }
+@media(max-width:480px) { .scroll-container { height: 240vh; } }
+
+.scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Section label inside scroll */
+.scroll-section-label {
+  position: absolute;
+  top: 28px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--text-3);
+  display: flex; align-items: center; gap: 8px;
+}
+.scroll-section-label::before,
+.scroll-section-label::after {
+  content: '';
+  display: block; width: 28px; height: 1px;
+  background: var(--text-3); opacity: 0.5;
+}
+
+/* Canvas */
+#atom-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Annotation cards — base */
+.anno-card {
+  position: absolute;
+  width: min(280px, 40vw);
+  background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(92,40,145,0.15);
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 8px 40px rgba(92,40,145,0.12);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  z-index: 20;
+}
+.anno-card.visible { opacity: 1; }
+
+/* Card 1 — right side, vertically centered */
+#card-1 { right: 5%; top: 50%; transform: translateY(calc(-50% + 20px)); }
+#card-1.visible { transform: translateY(-50%); }
+
+/* Card 2 — top left */
+#card-2 { left: 5%; top: 16%; transform: translateY(-20px); }
+#card-2.visible { transform: translateY(0); }
+
+/* Card 3 — bottom left */
+#card-3 { left: 5%; bottom: 16%; transform: translateY(20px); }
+#card-3.visible { transform: translateY(0); }
+
+.anno-num {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--accent-l); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.anno-num::before {
+  content: '';
+  display: block; width: 20px; height: 2px;
+  background: var(--accent-l); border-radius: 1px;
+}
+.anno-card h3 {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 18px; font-weight: 700;
+  color: var(--accent); margin-bottom: 8px;
+}
+.anno-card p { font-size: 13px; color: var(--text-2); line-height: 1.65; }
+.anno-stat {
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--text-3);
+}
+.anno-stat strong {
+  display: block;
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 22px; font-weight: 700;
+  color: var(--accent); letter-spacing: 0;
+  text-transform: none; margin-bottom: 2px;
+}
+.anno-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 14px; font-size: 12px; font-weight: 600;
+  color: var(--accent-l); text-decoration: none;
+  pointer-events: auto; transition: gap 0.2s;
+}
+.anno-link:hover { gap: 9px; }
+
+/* Mobile: all cards stack at bottom center */
+@media(max-width:768px) {
+  #card-1, #card-2, #card-3 {
+    right: auto; top: auto; left: 50%; bottom: 20px;
+    transform: translateX(-50%) translateY(12px);
+    width: calc(100vw - 32px);
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    border-radius: 12px;
+  }
+  #card-1.visible, #card-2.visible, #card-3.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+  .anno-num { display: none; }
+  .anno-card h3 { font-size: 15px; margin-bottom: 0; }
+  .anno-card p, .anno-stat, .anno-link { display: none; }
+}
+
+/* Scroll progress ring inside sticky */
+.scroll-progress-ring {
+  position: absolute;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex; align-items: center; gap: 10px;
+}
+.ring-pip {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(92,40,145,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+.ring-pip.active {
+  background: var(--accent);
+  transform: scale(1.4);
+}
+
+/* ── Services ── */
+#services { background: var(--bg2); position: relative; z-index: 1; }
+.section-wrap { max-width: 1200px; margin: 0 auto; padding: 100px 40px; }
+@media(max-width:640px) { .section-wrap { padding: 70px 24px; } }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--accent-l); margin-bottom: 14px;
+}
+.section-label::before { content:''; display:block; width:24px; height:1px; background:var(--accent-l); }
+.section-title {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--text); line-height: 1.15; margin-bottom: 14px;
+}
+.section-title span {
+  background: linear-gradient(135deg, var(--accent), var(--accent-l));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-sub {
+  font-size: 16px; color: var(--text-2);
+  max-width: 520px; line-height: 1.75; margin-bottom: 56px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 36px 30px;
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at top left, rgba(92,40,145,0.08), transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.service-card:hover {
+  border-color: var(--border-h);
+  background: var(--card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(92,40,145,0.1);
+}
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 52px; height: 52px; border-radius: var(--r-sm);
+  background: rgba(92,40,145,0.1); border: 1px solid rgba(92,40,145,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 20px;
+}
+.service-card h3 {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 10px;
+}
+.service-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+.service-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 20px; font-size: 13px; font-weight: 600;
+  color: var(--accent-l); text-decoration: none; transition: gap 0.2s;
+}
+.service-link:hover { gap: 10px; }
+
+/* ── About ── */
+#about { background: var(--bg); position: relative; z-index: 1; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+@media(max-width:768px) { .about-grid { grid-template-columns:1fr; gap:40px; } }
+.about-points { display: flex; flex-direction: column; gap: 24px; }
+.about-point {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 20px 24px; background: var(--card);
+  border: 1px solid var(--border); border-radius: var(--r-sm);
+  transition: border-color 0.3s;
+}
+.about-point:hover { border-color: var(--border-h); }
+.about-point-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: rgba(92,40,145,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.about-point h4 {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px;
+}
+.about-point p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.about-bio {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 36px;
+}
+.about-bio h3 {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 26px; font-weight: 700;
+  color: var(--text); margin-bottom: 16px;
+}
+.about-bio p { font-size: 15px; color: var(--text-2); line-height: 1.8; margin-bottom: 14px; }
+.about-bio p:last-child { margin-bottom: 0; }
+.about-bio strong { color: var(--accent); }
+.about-bio .since {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent-l);
+  margin-bottom: 14px;
+}
+
+/* ── Stats ── */
+#stats {
+  background: var(--bg2); position: relative; z-index: 1;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border-radius: var(--r); overflow: hidden;
+}
+@media(max-width:640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat-item {
+  padding: 40px 32px; background: var(--bg2);
+  text-align: center; transition: background 0.3s;
+}
+.stat-item:hover { background: rgba(92,40,145,0.05); }
+.stat-number {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: 48px; font-weight: 700; line-height: 1;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-l));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.stat-label { font-size: 13px; color: var(--text-3); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
+
+/* ── CTA ── */
+#seminars { background: var(--bg); position: relative; z-index: 1; }
+.cta-card {
+  background: linear-gradient(135deg, rgba(92,40,145,0.1), rgba(147,83,200,0.05));
+  border: 1px solid rgba(92,40,145,0.2);
+  border-radius: 24px; padding: 72px 60px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-card::before {
+  content: ''; position: absolute; top: -60%; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(92,40,145,0.08), transparent 70%);
+  pointer-events: none;
+}
+.cta-card h2 {
+  font-family: 'Fraunces', serif; letter-spacing: -0.02em; font-optical-sizing: auto;
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--text); margin-bottom: 14px; position: relative;
+}
+.cta-card p {
+  font-size: 17px; color: var(--text-2);
+  max-width: 480px; margin: 0 auto 36px;
+  line-height: 1.75; position: relative;
+}
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+@media(max-width:640px) { .cta-card { padding: 48px 28px; } }
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 1;
+  background: var(--bg3); border-top: 1px solid var(--border);
+  padding: 48px 40px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.footer-copy { font-size: 13px; color: var(--text-3); }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 13px; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-2); }
+
+/* ── Utility ── */
+.section-label-no-top { margin-top: 0; }
+.stats-wrap { padding-top: 0; padding-bottom: 0; }
+
+/* ── Reveal ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- ── Loader ── -->
+<div id="loader">
+  <svg class="loader-atom" viewBox="0 0 60 60" fill="none">
+    <ellipse cx="30" cy="30" rx="24" ry="8" fill="none" stroke="rgba(192,132,252,0.6)" stroke-width="1.5"/>
+    <g transform="rotate(60,30,30)">
+      <ellipse cx="30" cy="30" rx="24" ry="8" fill="none" stroke="rgba(192,132,252,0.6)" stroke-width="1.5"/>
+    </g>
+    <g transform="rotate(120,30,30)">
+      <ellipse cx="30" cy="30" rx="24" ry="8" fill="none" stroke="rgba(192,132,252,0.6)" stroke-width="1.5"/>
+    </g>
+    <circle cx="30" cy="30" r="5" fill="#c084fc"/>
+  </svg>
+  <div class="loader-brand">Innovative Investment Professionals</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  <div class="loader-pct" id="loader-pct">Loading…</div>
+</div>
+
+<!-- ── Starscape ── -->
+<canvas id="starscape"></canvas>
+
+<!-- ── Scroll progress ── -->
+<div id="progress"></div>
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <a href="#" class="nav-brand">
+    <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
+      <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/>
+      <g transform="rotate(60,17,17)">
+        <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/>
+      </g>
+      <g transform="rotate(120,17,17)">
+        <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/>
+      </g>
+      <circle cx="17" cy="17" r="3" fill="#9353c8"/>
+    </svg>
+    <div class="nav-wordmark">
+      <span class="nav-word-top">Innovative</span>
+      <span class="nav-word-bot">Investment Professionals</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="retirement.html">Retirement Planning</a></li>
+        <li><a href="annuities.html">Annuities</a></li>
+        <li><a href="life-insurance.html">Life Insurance</a></li>
+      </ul>
+    </li>
+    <li><a href="seminars.html">Seminars</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-eyebrow"><span class="dot"></span>Financial Planning &amp; Wealth Management</div>
+  <h1 class="hero-title">A <span>Scientific</span> Approach<br>to Your Financial Future</h1>
+  <p class="hero-sub">Precision-driven retirement planning, annuities, and life insurance strategies — built on analysis and a commitment to your long-term security.</p>
+  <div class="hero-buttons">
+    <a href="#seminars" class="btn-primary">Schedule a Consultation →</a>
+    <a href="#scroll-anim" class="btn-secondary">Explore Our Approach</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-hint-arrow"></div>
+  </div>
+</section>
+
+<!-- ── Scroll Animation ── -->
+<section id="scroll-anim">
+  <div class="scroll-container">
+    <div class="scroll-sticky">
+      <div class="scroll-section-label">The IIP Method</div>
+      <canvas id="atom-canvas"></canvas>
+
+      <!-- Annotation cards -->
+      <!-- Card 1: right side — visible from start through end -->
+      <div class="anno-card" id="card-1" data-show="0.12" data-hide="0.98">
+        <div class="anno-num">01</div>
+        <h3>Retirement Planning</h3>
+        <p>Navigate 401(k)s, IRAs, and pension strategies with precision — building income that lasts through retirement.</p>
+        <div class="anno-stat"><strong>20 Years</strong>of retirement planning experience</div>
+        <a href="retirement.html" class="anno-link">Learn more →</a>
+      </div>
+
+      <!-- Card 2: top-left — appears mid-scroll, stays through end -->
+      <div class="anno-card" id="card-2" data-show="0.38" data-hide="0.98">
+        <div class="anno-num">02</div>
+        <h3>Annuities</h3>
+        <p>Structured income products that deliver guaranteed, predictable cash flow — certainty in an uncertain market.</p>
+        <div class="anno-stat"><strong>350+</strong>clients protected with annuity strategies</div>
+        <a href="annuities.html" class="anno-link">Learn more →</a>
+      </div>
+
+      <!-- Card 3: bottom-left — appears late, stays through end -->
+      <div class="anno-card" id="card-3" data-show="0.65" data-hide="0.98">
+        <div class="anno-num">03</div>
+        <h3>Life Insurance</h3>
+        <p>Comprehensive coverage options tailored to protect your beneficiaries and preserve the legacy you've built.</p>
+        <div class="anno-stat"><strong>100+</strong>educational events held yearly</div>
+        <a href="life-insurance.html" class="anno-link">Learn more →</a>
+      </div>
+
+      <!-- Progress pips -->
+      <div class="scroll-progress-ring">
+        <div class="ring-pip" id="pip-1"></div>
+        <div class="ring-pip" id="pip-2"></div>
+        <div class="ring-pip" id="pip-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ── -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">Comprehensive <span>Financial Planning</span></h2>
+    <p class="section-sub">From retirement income strategies to life protection — we cover every dimension of your financial future.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3>Retirement Planning</h3>
+        <p>Navigate 401(k)s, IRAs, and pension strategies with precision. We build income plans designed to sustain your lifestyle throughout retirement.</p>
+        <a href="retirement.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">📈</div>
+        <h3>Annuities</h3>
+        <p>Structured insurance products that deliver guaranteed, predictable income streams — giving you certainty in an uncertain market.</p>
+        <a href="annuities.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🛡️</div>
+        <h3>Life Insurance</h3>
+        <p>Comprehensive coverage options tailored to protect your beneficiaries and preserve the financial legacy you've worked to build.</p>
+        <a href="life-insurance.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🎓</div>
+        <h3>Educational Seminars</h3>
+        <p>Community-focused financial literacy events covering retirement strategies, market fundamentals, and protecting your wealth at every life stage.</p>
+        <a href="#seminars" class="service-link">Register →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About</div>
+        <h2 class="section-title reveal">Meet <span>Christopher Rael</span></h2>
+        <div class="about-bio reveal">
+          <div class="since">Founded 1996</div>
+          <p><strong>Christopher Rael</strong> started Innovative Investment Professionals in 1996 with the intention of helping people "solve their investment problems" through an honest, straightforward approach.</p>
+          <p>Chris went into this industry entirely to help people, and takes their individual situations into account when doing so. He'll get you not only to retirement, but through it. He'll go the extra mile to help clients achieve their goals.</p>
+          <p>Christopher is honest, compassionate, generous, and a pretty funny guy. When not doing this work, he's a high school basketball coach. In his spare time, he enjoys traveling, reading, movies, and spending time outdoors.</p>
+        </div>
+      </div>
+      <div class="about-points">
+        <div class="section-label section-label-no-top">Our Philosophy</div>
+        <div class="about-point reveal">
+          <div class="about-point-icon">⚛️</div>
+          <div>
+            <h4>Evidence-Based Strategy</h4>
+            <p>Every recommendation is grounded in data, historical performance, and proven financial principles — not speculation.</p>
+          </div>
+        </div>
+        <div class="about-point reveal reveal-delay-1">
+          <div class="about-point-icon">🔄</div>
+          <div>
+            <h4>Continuous Portfolio Review</h4>
+            <p>Your financial plan evolves with your life. We conduct regular reviews to adapt strategies as markets and circumstances change.</p>
+          </div>
+        </div>
+        <div class="about-point reveal reveal-delay-2">
+          <div class="about-point-icon">🤝</div>
+          <div>
+            <h4>Client-First Guidance</h4>
+            <p>We act as fiduciaries — meaning your best interests always come first, with transparent, conflict-free advice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ── -->
+<section id="stats">
+  <div class="section-wrap stats-wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="30">0</span>+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="500">0</span>+</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$<span class="count-up" data-target="50">0</span>M+</div>
+        <div class="stat-label">Assets Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="2000">0</span>+</div>
+        <div class="stat-label">Seminar Attendees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="seminars">
+  <div class="section-wrap">
+    <div class="cta-card reveal">
+      <h2>Join Our Next Free Seminar</h2>
+      <p>Learn the fundamentals of retirement planning, income strategies, and protecting your financial future — at no cost, no obligation.</p>
+      <div class="cta-buttons">
+        <a href="tel:5058961348" class="btn-primary">Call (505) 896-1348 →</a>
+        <a href="#" class="btn-secondary">Schedule a Private Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">&copy; 2025 Innovative Investment Professionals. Rio Rancho, NM · (505) 896-1348</div>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Disclosures</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* ─── Frame sequence setup ─── */
+const TOTAL_FRAMES = 81;
+const FRAME_PATH = 'frames/frame_';
+const images = [];
+let framesLoaded = 0;
+let animReady = false;
+
+const loaderBar = document.getElementById('loader-bar');
+const loaderPct = document.getElementById('loader-pct');
+const loader    = document.getElementById('loader');
+
+for (let i = 1; i <= TOTAL_FRAMES; i++) {
+  const img = new Image();
+  const src = FRAME_PATH + String(i).padStart(4, '0') + '.jpg';
+  img.onload = img.onerror = () => {
+    framesLoaded++;
+    const pct = Math.round(framesLoaded / TOTAL_FRAMES * 100);
+    loaderBar.style.width = pct + '%';
+    loaderPct.textContent = pct + '%';
+    if (framesLoaded === TOTAL_FRAMES) {
+      animReady = true;
+      loader.classList.add('hidden');
+      drawFrame(0);
+    }
+  };
+  img.src = src;
+  images.push(img);
+}
+
+/* ─── Canvas setup ─── */
+const canvas = document.getElementById('atom-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width  = window.innerWidth  * devicePixelRatio;
+  canvas.height = window.innerHeight * devicePixelRatio;
+  canvas.style.width  = window.innerWidth  + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  if (animReady) drawFrame(lastFracIdx < 0 ? 0 : lastFracIdx);
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+let lastFracIdx = -1;
+
+function drawFrame(fracIdx) {
+  // Skip if change is imperceptible
+  if (Math.abs(fracIdx - lastFracIdx) < 0.015) return;
+  lastFracIdx = fracIdx;
+
+  const lo = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.floor(fracIdx)));
+  const hi = Math.min(TOTAL_FRAMES - 1, lo + 1);
+  const blend = fracIdx - lo;
+
+  const imgLo = images[lo];
+  if (!imgLo || !imgLo.complete || !imgLo.naturalWidth) return;
+
+  const cw = canvas.width, ch = canvas.height;
+  const iw = imgLo.naturalWidth, ih = imgLo.naturalHeight;
+  const mobile = window.innerWidth < 768;
+
+  ctx.clearRect(0, 0, cw, ch);
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, cw, ch);
+
+  const scale = mobile
+    ? Math.min(cw / iw, ch / ih) * 1.05
+    : Math.max(cw / iw, ch / ih);
+  const w = iw * scale, h = ih * scale;
+  const dx = (cw - w) / 2, dy = (ch - h) / 2;
+
+  ctx.globalAlpha = 1;
+  ctx.drawImage(imgLo, dx, dy, w, h);
+
+  // Blend next frame for smooth interpolation between source frames
+  if (blend > 0.015 && hi !== lo) {
+    const imgHi = images[hi];
+    if (imgHi && imgHi.complete && imgHi.naturalWidth) {
+      ctx.globalAlpha = blend;
+      ctx.drawImage(imgHi, dx, dy, w, h);
+      ctx.globalAlpha = 1;
+    }
+  }
+}
+
+/* ─── Scroll-driven animation — pure, no snap ─── */
+const scrollContainer = document.querySelector('.scroll-container');
+const annoCards = document.querySelectorAll('.anno-card');
+const pips = [
+  document.getElementById('pip-1'),
+  document.getElementById('pip-2'),
+  document.getElementById('pip-3'),
+];
+
+const PIP_TARGETS = [0.27, 0.55, 0.82];
+let pendingRAF = false;
+
+function getScrollProgress() {
+  const rect = scrollContainer.getBoundingClientRect();
+  const total = rect.height - window.innerHeight;
+  return Math.max(0, Math.min(1, -rect.top / total));
+}
+
+function updateScene(progress) {
+  // Drive the video frame from scroll position — works forward AND reverse
+  drawFrame(progress * (TOTAL_FRAMES - 1));
+
+  annoCards.forEach(card => {
+    const show = parseFloat(card.dataset.show);
+    const hide = parseFloat(card.dataset.hide);
+    card.classList.toggle('visible', progress >= show && progress < hide);
+  });
+
+  pips.forEach((pip, i) => {
+    const t = PIP_TARGETS[i];
+    pip.classList.toggle('active', progress >= t - 0.12 && progress < t + 0.22);
+  });
+}
+
+function onScroll() {
+  if (!animReady || pendingRAF) return;
+  pendingRAF = true;
+  requestAnimationFrame(() => {
+    pendingRAF = false;
+    const rect = scrollContainer.getBoundingClientRect();
+    // Only update when scroll section is anywhere near the viewport
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    updateScene(getScrollProgress());
+  });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+
+/* ─── Scroll progress bar (page-wide) ─── */
+const progressBar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h   = document.documentElement;
+  const pct = (window.scrollY / (h.scrollHeight - h.clientHeight)) * 100;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+
+/* ─── Navbar pill ─── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+/* ─── Starscape ─── */
+(function() {
+  const c = document.getElementById('starscape');
+  const x = c.getContext('2d');
+  let stars = [], W, H;
+
+  function init() {
+    W = c.width  = window.innerWidth;
+    H = c.height = window.innerHeight;
+    stars = Array.from({ length: 160 }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.2 + 0.2,
+      base: Math.random() * 0.5 + 0.08,
+      phase: Math.random() * Math.PI * 2,
+      ts: Math.random() * 0.016 + 0.004,
+      dx: (Math.random() - 0.5) * 0.012,
+      dy: (Math.random() - 0.5) * 0.012,
+    }));
+  }
+
+  function draw() {
+    x.clearRect(0, 0, W, H);
+    const t = Date.now() * 0.001;
+    stars.forEach(s => {
+      s.x = (s.x + s.dx + W) % W;
+      s.y = (s.y + s.dy + H) % H;
+      const op = s.base + Math.sin(t * s.ts * 60 + s.phase) * 0.2;
+      x.beginPath();
+      x.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      x.fillStyle = `rgba(92,40,145,${Math.max(0, op)})`;
+      x.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', init);
+  init(); draw();
+})();
+
+/* ─── Reveal on scroll ─── */
+const revealEls = document.querySelectorAll('.reveal');
+new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.12 }).observe
+  ? (() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => obs.observe(el));
+  })()
+  : revealEls.forEach(el => el.classList.add('visible'));
+
+/* ─── Count-up ─── */
+function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+const countEls = document.querySelectorAll('.count-up');
+const cObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    cObs.unobserve(e.target);
+    const el = e.target, target = +el.dataset.target, dur = 1800, start = Date.now();
+    (function tick() {
+      const p = Math.min((Date.now() - start) / dur, 1);
+      el.textContent = Math.round(easeOutExpo(p) * target).toLocaleString();
+      if (p < 1) requestAnimationFrame(tick);
+    })();
+  });
+}, { threshold: 0.5 });
+countEls.forEach(el => cObs.observe(el));
+</script>
+</body>
+</html>

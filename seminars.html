@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Educational Seminars — Innovative Investment Professionals</title>
+<meta name="description" content="Free retirement planning seminars in Albuquerque and Rio Rancho, NM. No cost, no obligation — with a complimentary gourmet meal. Learn about annuities, taxes in retirement, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #ffffff; --bg2: #f9f9fb; --bg3: #f3f0f8;
+  --card: rgba(92,40,145,0.05); --border: rgba(147,83,200,0.18); --border-h: rgba(92,40,145,0.38);
+  --accent: #5c2891; --accent-l: #9353c8; --accent-d: #3d1a60;
+  --text: #1a1a2e; --text-2: #4a3a6a; --text-3: #9a88b8;
+  --r: 18px; --r-sm: 10px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 0 40px; height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+#navbar.scrolled {
+  top: 12px; left: 50%; right: auto; transform: translateX(-50%);
+  width: min(960px, calc(100vw - 32px)); border-radius: 100px; height: 58px; padding: 0 28px;
+  background: rgba(255,255,255,0.92); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+  border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(92,40,145,0.12);
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-atom { width: 34px; height: 34px; flex-shrink: 0; }
+.nav-wordmark { display: flex; flex-direction: column; }
+.nav-word-top { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--accent-l); text-transform: uppercase; line-height: 1; }
+.nav-word-bot { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; color: var(--text-2); text-transform: uppercase; line-height: 1.4; }
+.nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+.nav-links a { padding: 8px 16px; font-size: 13px; font-weight: 500; color: var(--text-2); text-decoration: none; border-radius: 100px; transition: all 0.2s; }
+.nav-links a:hover { color: var(--text); background: rgba(92,40,145,0.06); }
+.nav-links a.active { color: var(--accent); background: rgba(92,40,145,0.08); font-weight: 600; }
+.nav-cta { padding: 9px 22px !important; background: var(--accent) !important; color: white !important; }
+.nav-cta:hover { background: var(--accent-l) !important; }
+/* ── Nav Dropdown ── */
+.nav-dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(255,255,255,0.98); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  border: 1px solid var(--border); border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(92,40,145,0.15);
+  padding: 8px; min-width: 200px; list-style: none;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s; z-index: 600;
+}
+.nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.dropdown-menu::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+.dropdown-menu a { display: block; padding: 9px 14px !important; border-radius: 8px !important; font-size: 13px; font-weight: 500; color: var(--text-2); white-space: nowrap; transition: all 0.15s; }
+.dropdown-menu a:hover { background: rgba(92,40,145,0.08) !important; color: var(--accent) !important; }
+.nav-dropdown > a::after { content: ' ⌄'; font-size: 10px; opacity: 0.6; vertical-align: 1px; }
+@media(max-width:680px) { .nav-links { display: none; } }
+
+.page-hero {
+  background: linear-gradient(135deg, #2d1a50 0%, var(--accent) 60%, var(--accent-l) 100%);
+  padding: 140px 40px 80px; text-align: center; position: relative; overflow: hidden;
+}
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.08), transparent 60%); }
+.breadcrumb { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 20px; position: relative; }
+.breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+.page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(34px,5vw,58px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 16px; position: relative;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.page-hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+.hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+.hero-badge { padding: 8px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; font-size: 13px; font-weight: 600; color: #fff; }
+/* ── Hero Photo ── */
+.hero-photo { overflow: hidden; height: 320px; position: relative; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.hero-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(61,26,96,0.6) 0%, transparent 60%); }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
+@media(max-width:640px) { .wrap { padding: 60px 24px; } }
+.section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-l); margin-bottom: 14px; }
+.section-label::before { content:''; display:block; width:24px; height:1px; background:var(--accent-l); }
+.section-title { font-family: 'Fraunces', serif; font-size: clamp(26px,3.5vw,42px); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 14px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.section-title span { background: linear-gradient(135deg, var(--accent), var(--accent-l)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.section-sub { font-size: 16px; color: var(--text-2); max-width: 560px; line-height: 1.75; margin-bottom: 48px; }
+
+/* ── What to Expect ── */
+.expect-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+@media(max-width:768px) { .expect-grid { grid-template-columns: 1fr; } }
+.expect-card { padding: 32px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); transition: all 0.3s; text-align: center; }
+.expect-card:hover { border-color: var(--border-h); transform: translateY(-3px); }
+.expect-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+.expect-card h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 8px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.expect-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+/* ── Topics ── */
+#topics { background: var(--bg2); }
+.topics-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+@media(max-width:768px) { .topics-layout { grid-template-columns: 1fr; } }
+.topics-list { display: flex; flex-direction: column; gap: 16px; }
+.topic-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-sm); transition: all 0.3s; }
+.topic-item:hover { border-color: var(--border-h); transform: translateX(4px); }
+.topic-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(92,40,145,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-l); font-size: 12px; font-weight: 700; margin-top: 1px; }
+.topic-item h4 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.topic-item p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+.seminar-aside { padding: 36px; background: linear-gradient(135deg, var(--accent-d), var(--accent)); border-radius: var(--r); position: sticky; top: 100px; }
+.seminar-aside h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 12px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.seminar-aside p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 24px; }
+.aside-detail { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+.aside-detail-icon { font-size: 20px; flex-shrink: 0; }
+.aside-detail-text { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+.aside-detail-text strong { display: block; color: #fff; font-size: 14px; }
+.aside-divider { height: 1px; background: rgba(255,255,255,0.15); margin: 20px 0; }
+.btn-aside { display: block; text-align: center; padding: 14px 24px; background: #ffffff; color: var(--accent); border-radius: 100px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.25s; margin-bottom: 12px; }
+.btn-aside:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-aside-outline { display: block; text-align: center; padding: 13px 24px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); border-radius: 100px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.25s; }
+.btn-aside-outline:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); }
+
+/* ── Testimonials / Community ── */
+.community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media(max-width:680px) { .community-grid { grid-template-columns: 1fr; } }
+.community-card { padding: 32px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); transition: all 0.3s; }
+.community-card:hover { border-color: var(--border-h); }
+.community-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+.community-card h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--accent); margin-bottom: 8px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.community-card p { font-size: 14px; color: var(--text-2); line-height: 1.75; }
+
+/* ── CTA ── */
+#page-cta { background: linear-gradient(135deg, var(--accent-d), var(--accent)); padding: 80px 40px; text-align: center; }
+#page-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: #ffffff; margin-bottom: 14px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+#page-cta p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 36px; line-height: 1.75; }
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white { padding: 14px 30px; background: #ffffff; color: var(--accent); border-radius: 100px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.25s; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+.btn-outline-white { padding: 14px 30px; background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); border-radius: 100px; font-size: 15px; font-weight: 500; text-decoration: none; transition: all 0.25s; }
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1); }
+
+footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 48px 40px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer-copy { font-size: 13px; color: var(--text-3); }
+.footer-nav { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-nav a { font-size: 13px; color: var(--text-2); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.footer-nav a:hover { color: var(--accent); }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 13px; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-2); }
+.legal { max-width: 1100px; margin: 24px auto 0; padding-top: 24px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-3); line-height: 1.7; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; }
+
+#globe-bg { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="iip.html" class="nav-brand">
+    <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
+      <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/>
+      <g transform="rotate(60,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/></g>
+      <g transform="rotate(120,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/></g>
+      <circle cx="17" cy="17" r="3" fill="#9353c8"/>
+    </svg>
+    <div class="nav-wordmark"><span class="nav-word-top">Innovative</span><span class="nav-word-bot">Investment Professionals</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="iip.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="nav-dropdown">
+      <a href="services.html">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="retirement.html">Retirement Planning</a></li>
+        <li><a href="annuities.html">Annuities</a></li>
+        <li><a href="life-insurance.html">Life Insurance</a></li>
+      </ul>
+    </li>
+    <li><a href="seminars.html" class="active">Seminars</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="iip.html">Home</a> <span>/</span> Seminars</div>
+  <h1>Free Educational<br>Seminars</h1>
+  <p>Join us for an evening of honest financial education — no products pushed, no pressure applied. Just the information you need to plan a confident retirement.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">✓ Completely Free</span>
+    <span class="hero-badge">🍽️ Gourmet Meal Included</span>
+    <span class="hero-badge">📍 Albuquerque & Rio Rancho</span>
+  </div>
+</div>
+
+<!-- ── Hero Photo ── -->
+<div class="hero-photo">
+  <img src="assets/seminar-couple.jpg" alt="Smiling senior couple enjoying a gourmet meal at a retirement seminar">
+  <div class="hero-photo-overlay"></div>
+</div>
+
+<!-- ── What to Expect ── -->
+<section>
+  <div class="wrap">
+    <div class="section-label">The Experience</div>
+    <h2 class="section-title">What to <span>Expect</span></h2>
+    <p class="section-sub">Every seminar is designed to be informative, comfortable, and completely pressure-free.</p>
+    <div class="expect-grid">
+      <div class="expect-card reveal">
+        <span class="expect-icon">🍽️</span>
+        <h3>Complimentary Gourmet Meal</h3>
+        <p>Throughout the year, we hold educational seminar presentations that include a no-cost gourmet meal. Come hungry — for knowledge and for dinner.</p>
+      </div>
+      <div class="expect-card reveal reveal-delay-1">
+        <span class="expect-icon">📚</span>
+        <h3>Real Financial Education</h3>
+        <p>We cover topics that actually matter to people approaching retirement — not jargon, not sales pitches. Plain language, real numbers, and honest conversation.</p>
+      </div>
+      <div class="expect-card reveal reveal-delay-2">
+        <span class="expect-icon">🤝</span>
+        <h3>No Obligation, Ever</h3>
+        <p>You can attend, learn everything, and walk out — no follow-up required. We believe the right way to earn your business is to earn your trust first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Topics ── -->
+<section id="topics">
+  <div class="wrap">
+    <div class="topics-layout">
+      <div>
+        <div class="section-label">What We Cover</div>
+        <h2 class="section-title">Seminar <span>Topics</span></h2>
+        <p class="section-sub">Each seminar covers a range of relevant subjects. Here's what you can expect to learn:</p>
+        <div class="topics-list">
+          <div class="topic-item reveal">
+            <div class="topic-check">✓</div>
+            <div><h4>Protection of Principal</h4><p>How to safeguard your retirement savings from market losses — so you keep what you've earned.</p></div>
+          </div>
+          <div class="topic-item reveal">
+            <div class="topic-check">✓</div>
+            <div><h4>Earning a Reasonable Rate of Return</h4><p>How to continue growing your money safely — without taking on stock market risk.*</p></div>
+          </div>
+          <div class="topic-item reveal">
+            <div class="topic-check">✓</div>
+            <div><h4>Guarantees</h4><p>What it means when a product is "guaranteed" — and how to evaluate those guarantees with confidence.**</p></div>
+          </div>
+          <div class="topic-item reveal">
+            <div class="topic-check">✓</div>
+            <div><h4>Lessening the Tax Burden in Retirement</h4><p>Strategies to reduce how much of your retirement income goes to taxes — legally and effectively.</p></div>
+          </div>
+          <div class="topic-item reveal">
+            <div class="topic-check">✓</div>
+            <div><h4>Your Retirement and the Stock Market</h4><p>How to think about market risk as you approach and enter retirement — and when it matters most.</p></div>
+          </div>
+          <div class="topic-item reveal">
+            <div class="topic-check">+</div>
+            <div><h4>And More</h4><p>Topics vary by seminar. Bring your questions — we leave time for Q&A at every event.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="seminar-aside reveal">
+          <h3>Reserve Your Seat</h3>
+          <p>Seminars fill up quickly. Call or email us to confirm your spot at the next event near you.</p>
+          <div class="aside-detail">
+            <div class="aside-detail-icon">📞</div>
+            <div class="aside-detail-text"><strong>505-896-1348</strong>Call to reserve — we'll confirm your seat and send details</div>
+          </div>
+          <div class="aside-detail">
+            <div class="aside-detail-icon">✉️</div>
+            <div class="aside-detail-text"><strong>crael@iip.services</strong>Email us to ask about upcoming dates</div>
+          </div>
+          <div class="aside-detail">
+            <div class="aside-detail-icon">📍</div>
+            <div class="aside-detail-text"><strong>Albuquerque & Rio Rancho, NM</strong>Venue details sent upon reservation</div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="contact.html" class="btn-aside">Reserve My Seat →</a>
+          <a href="tel:5058961348" class="btn-aside-outline">Call (505) 896-1348</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Community ── -->
+<section>
+  <div class="wrap">
+    <div class="section-label">Giving Back</div>
+    <h2 class="section-title">More Than <span>Just Seminars</span></h2>
+    <p class="section-sub">Our events are designed to give back — to our clients and to the community.</p>
+    <div class="community-grid">
+      <div class="community-card reveal">
+        <span class="community-icon">❤️</span>
+        <h3>Charity Fundraisers</h3>
+        <p>Many of our seminar events double as fundraisers for local charities. Not everyone is as fortunate as we are. For this reason, we do what we can to give back to our community — and invite our clients to join us.</p>
+      </div>
+      <div class="community-card reveal reveal-delay-1">
+        <span class="community-icon">💡</span>
+        <h3>Help Us Help You</h3>
+        <p>Think there's a charitable organization that could use our help? We'd be happy to look into it. Reach out to Jerry — he coordinates our community event calendar and is always looking for ways to make a difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="page-cta">
+  <h2>Join Our Next Free Seminar</h2>
+  <p>Learn the fundamentals of retirement planning and protecting your financial future — at no cost, no obligation, with a complimentary dinner.</p>
+  <div class="cta-row">
+    <a href="contact.html" class="btn-white">Reserve Your Seat →</a>
+    <a href="tel:5058961348" class="btn-outline-white">Call (505) 896-1348</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2024 Innovative Investment Professionals · Albuquerque & Rio Rancho, NM</div>
+    <nav class="footer-nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="seminars.html">Seminars</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <ul class="footer-links">
+      <li><a href="tel:5058961348">505-896-1348</a></li>
+      <li><a href="mailto:crael@iip.services">crael@iip.services</a></li>
+    </ul>
+  </div>
+  <div class="legal">
+    *Backed by the claims paying ability of the carrier. **Our products offer a reasonable rate of return, over time.<br>
+    This site is for informational purposes only and is not intended to be a solicitation for or offering of any product or investment. Securities offered through World Equity Group, Inc., member <strong>FINRA</strong> and <strong>SIPC</strong>, a Registered Investment Adviser. Innovative Investment Professionals is not owned or controlled by World Equity Group, Inc.
+  </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 80), { passive: true });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+<!-- ── 3D Wireframe Globe Background ── -->
+<div id="globe-bg"></div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+(function(){
+  const container = document.getElementById('globe-bg');
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  container.appendChild(renderer.domElement);
+  Object.assign(renderer.domElement.style, { width:'100%', height:'100%', position:'absolute', inset:'0' });
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 3.5);
+  new GLTFLoader().load('assets/wireframesphere.glb', gltf => {
+    const model = gltf.scene;
+    model.traverse(c => {
+      if(c.isMesh) c.material = new THREE.MeshBasicMaterial({ color: 0x7c3aed, wireframe: true, transparent: true, opacity: 0.55 });
+    });
+    model.scale.setScalar(2.2);
+    model.position.set(-1.8, 1.4, 0);
+    scene.add(model);
+    (function frame(){
+      requestAnimationFrame(frame);
+      model.rotation.y += 0.0035;
+      model.rotation.x += 0.001;
+      // Fade out as user scrolls down, fade back in on scroll up
+      const fade = Math.max(0, 1 - window.scrollY / 300);
+      container.style.opacity = fade;
+      renderer.render(scene, camera);
+    })();
+  }, undefined, e => console.warn('Globe:', e));
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
