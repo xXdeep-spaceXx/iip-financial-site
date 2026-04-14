@@ -374,7 +374,7 @@ import * as THREE from 'three';
   camera.position.set(0, 0, 3.5);
 
   // Procedural wireframe sphere — clean lat/long grid, no .glb needed
-  const sphere = new THREE.SphereGeometry(1.5, 28, 18);
+  const sphere = new THREE.SphereGeometry(0.9, 28, 18);
   const wire   = new THREE.WireframeGeometry(sphere);
   const mat    = new THREE.LineBasicMaterial({ color: 0x7c3aed, transparent: true, opacity: 0.45 });
   const globe  = new THREE.LineSegments(wire, mat);
@@ -383,8 +383,8 @@ import * as THREE from 'three';
 
   (function frame(){
     requestAnimationFrame(frame);
-    globe.rotation.y += 0.0035;
-    globe.rotation.x += 0.001;
+    globe.rotation.y += 0.001;
+    globe.rotation.x += 0.0003;
     const fade = Math.max(0, 1 - window.scrollY / 300);
     container.style.opacity = fade;
     renderer.render(scene, camera);
