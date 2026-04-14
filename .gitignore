@@ -3,3 +3,14 @@ node_modules/
 .cache/
 *.log
 .DS_Store
+app/
+components/
+public/
+next-env.d.ts
+next.config.mjs
+package.json
+package-lock.json
+postcss.config.js
+tailwind.config.ts
+tsconfig.json
+iip-prompts.html
