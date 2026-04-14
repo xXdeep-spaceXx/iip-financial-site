@@ -178,6 +178,17 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 .reveal-delay-3 { transition-delay: 0.3s; }
 
 #globe-bg { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+
+/* ── Grain Texture ── */
+.page-hero::after,
+#page-cta::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+#page-cta { position: relative; overflow: hidden; }
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head>
