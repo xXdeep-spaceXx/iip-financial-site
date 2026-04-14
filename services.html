@@ -11,10 +11,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --bg: #F9F7F2; --bg2: #F3F1EC; --bg3: #EDE9E0;
-  --card: rgba(92,40,145,0.05); --card-hover: rgba(92,40,145,0.10);
-  --border: rgba(147,83,200,0.18); --border-h: rgba(92,40,145,0.38);
-  --accent: #5c2891; --accent-l: #9353c8; --accent-d: #3d1a60;
-  --text: #1a1a2e; --text-2: #4a3a6a; --text-3: #9a88b8;
+  --card: rgba(26,61,42,0.05); --card-hover: rgba(26,61,42,0.10);
+  --border: rgba(26,61,42,0.18); --border-h: rgba(26,61,42,0.38);
+  --accent: #1a3d2a; --accent-l: #c9972a; --accent-d: #0f2619;
+  --text: #111c14; --text-2: #3a4f3d; --text-3: #7a9a7d;
   --r: 18px; --r-sm: 10px;
 }
 html { scroll-behavior: smooth; }
@@ -30,7 +30,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   top: 12px; left: 50%; right: auto; transform: translateX(-50%);
   width: min(960px, calc(100vw - 32px)); border-radius: 100px; height: 58px; padding: 0 28px;
   background: rgba(255,255,255,0.92); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
-  border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(92,40,145,0.12);
+  border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(26,61,42,0.12);
 }
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .nav-atom { width: 34px; height: 34px; flex-shrink: 0; }
@@ -39,8 +39,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .nav-word-bot { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; color: var(--text-2); text-transform: uppercase; line-height: 1.4; }
 .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
 .nav-links a { padding: 8px 16px; font-size: 13px; font-weight: 500; color: var(--text-2); text-decoration: none; border-radius: 100px; transition: all 0.2s; }
-.nav-links a:hover { color: var(--text); background: rgba(92,40,145,0.06); }
-.nav-links a.active { color: var(--accent); background: rgba(92,40,145,0.08); font-weight: 600; }
+.nav-links a:hover { color: var(--text); background: rgba(26,61,42,0.06); }
+.nav-links a.active { color: var(--accent); background: rgba(26,61,42,0.08); font-weight: 600; }
 .nav-cta { padding: 9px 22px !important; background: var(--accent) !important; color: white !important; }
 .nav-cta:hover { background: var(--accent-l) !important; }
 /* ── Nav Dropdown ── */
@@ -50,7 +50,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   transform: translateX(-50%) translateY(-6px);
   background: rgba(255,255,255,0.98); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   border: 1px solid var(--border); border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(92,40,145,0.15);
+  box-shadow: 0 12px 40px rgba(26,61,42,0.15);
   padding: 8px; min-width: 200px; list-style: none;
   display: flex; flex-direction: column; gap: 2px;
   opacity: 0; pointer-events: none;
@@ -59,7 +59,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
 .dropdown-menu::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
 .dropdown-menu a { display: block; padding: 9px 14px !important; border-radius: 8px !important; font-size: 13px; font-weight: 500; color: var(--text-2); white-space: nowrap; transition: all 0.15s; }
-.dropdown-menu a:hover { background: rgba(92,40,145,0.08) !important; color: var(--accent) !important; }
+.dropdown-menu a:hover { background: rgba(26,61,42,0.08) !important; color: var(--accent) !important; }
 .nav-dropdown > a::after { content: ' ⌄'; font-size: 10px; opacity: 0.6; vertical-align: 1px; }
 @media(max-width:680px) { .nav-links { display: none; } }
 
@@ -97,14 +97,14 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   width: 4px; background: linear-gradient(180deg, var(--accent), var(--accent-l));
   opacity: 0; transition: opacity 0.3s;
 }
-.big-service:hover { border-color: var(--border-h); box-shadow: 0 16px 50px rgba(92,40,145,0.1); transform: translateX(4px); }
+.big-service:hover { border-color: var(--border-h); box-shadow: 0 16px 50px rgba(26,61,42,0.1); transform: translateX(4px); }
 .big-service:hover::before { opacity: 1; }
 @media(max-width:640px) { .big-service { grid-template-columns: 60px 1fr; } .big-service-arrow { display: none; } }
-.big-service-icon { width: 72px; height: 72px; border-radius: var(--r-sm); background: rgba(92,40,145,0.08); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+.big-service-icon { width: 72px; height: 72px; border-radius: var(--r-sm); background: rgba(26,61,42,0.08); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
 .big-service-body h3 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 8px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
 .big-service-body p { font-size: 14px; color: var(--text-2); line-height: 1.7; max-width: 580px; }
 .big-service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.tag { padding: 3px 10px; background: rgba(92,40,145,0.07); border: 1px solid var(--border); border-radius: 100px; font-size: 11px; font-weight: 600; color: var(--accent-l); letter-spacing: 0.5px; }
+.tag { padding: 3px 10px; background: rgba(26,61,42,0.07); border: 1px solid var(--border); border-radius: 100px; font-size: 11px; font-weight: 600; color: var(--accent-l); letter-spacing: 0.5px; }
 .big-service-arrow { font-size: 22px; color: var(--accent-l); opacity: 0.4; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0; }
 .big-service:hover .big-service-arrow { opacity: 1; transform: translateX(4px); }
 
@@ -114,7 +114,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 @media(max-width:768px) { .principles-grid { grid-template-columns: 1fr; } }
 .principle-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r); padding: 36px 28px; position: relative; overflow: hidden; transition: all 0.3s; }
 .principle-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-l)); }
-.principle-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(92,40,145,0.1); }
+.principle-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(26,61,42,0.1); }
 .principle-icon { font-size: 32px; margin-bottom: 16px; display: block; }
 .principle-card h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 10px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
 .principle-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
@@ -172,10 +172,10 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 <nav id="navbar">
   <a href="iip.html" class="nav-brand">
     <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
-      <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/>
-      <g transform="rotate(60,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/></g>
-      <g transform="rotate(120,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(147,83,200,0.7)" stroke-width="1.2"/></g>
-      <circle cx="17" cy="17" r="3" fill="#9353c8"/>
+      <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(201,151,42,0.7)" stroke-width="1.2"/>
+      <g transform="rotate(60,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(201,151,42,0.7)" stroke-width="1.2"/></g>
+      <g transform="rotate(120,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(201,151,42,0.7)" stroke-width="1.2"/></g>
+      <circle cx="17" cy="17" r="3" fill="#c9972a"/>
     </svg>
     <div class="nav-wordmark"><span class="nav-word-top">Innovative</span><span class="nav-word-bot">Investment Professionals</span></div>
   </a>
@@ -347,7 +347,7 @@ import * as THREE from 'three';
   // Procedural wireframe sphere — clean lat/long grid, no .glb needed
   const sphere = new THREE.SphereGeometry(0.9, 28, 18);
   const wire   = new THREE.WireframeGeometry(sphere);
-  const mat    = new THREE.LineBasicMaterial({ color: 0x7c3aed, transparent: true, opacity: 0.45 });
+  const mat    = new THREE.LineBasicMaterial({ color: 0x1a3d2a, transparent: true, opacity: 0.45 });
   const globe  = new THREE.LineSegments(wire, mat);
   globe.position.set(-1.8, 1.4, 0);
   scene.add(globe);
