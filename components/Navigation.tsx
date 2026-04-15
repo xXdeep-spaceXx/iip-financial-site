@@ -61,7 +61,7 @@ export default function Navigation() {
       className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
           ? "top-0 bg-white/95 backdrop-blur-md shadow-md border-b border-[var(--border)]"
-          : "top-9 bg-[var(--bg)]/90 backdrop-blur-sm"
+          : "top-9 nav-bg-transparent backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">

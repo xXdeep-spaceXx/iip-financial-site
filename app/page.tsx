@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WireframeSphere from "@/components/WireframeSphere";
+import HeroOrb from "@/components/HeroOrb";
 
 export const metadata: Metadata = {
   title: "Innovative Investment Professionals | Retirement Planning in Rio Rancho, NM",
@@ -77,29 +77,29 @@ export default function HomePage() {
       <section className="relative overflow-hidden pt-44 pb-28 px-6">
         <div className="absolute inset-0 page-hero opacity-90 pointer-events-none" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[480px] h-[480px] hidden lg:block pointer-events-none">
-          <WireframeSphere className="w-full h-full" />
+          <HeroOrb className="w-full h-full" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="max-w-2xl">
-            <p className="section-label text-[rgba(255,255,255,0.7)] mb-5">
+            <p className="section-label text-[rgba(255,255,255,0.7)] mb-5 animate-hero">
               Rio Rancho &amp; Albuquerque, NM · Since 1996
             </p>
-            <h1 className="hero-title text-white mb-2">
+            <h1 className="hero-title text-white mb-2 animate-hero-delay-1">
               Retire with more
             </h1>
-            <h1 className="hero-title text-[rgba(255,255,255,0.55)]">
+            <h1 className="hero-title text-[rgba(255,255,255,0.55)] animate-hero-delay-1">
               than you planned on.
             </h1>
-            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug">
+            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug animate-hero-delay-2">
               Innovative Investment Professionals has helped New Mexico families build
               and protect their retirement income for over 30 years — with honesty,
               clarity, and zero market risk.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 animate-hero-delay-3">
               <Link href="/retirement-planning" className="btn-white">Start Planning</Link>
               <Link href="/seminars" className="btn-hero-outline">See Free Seminars</Link>
             </div>
-            <a href="tel:5058961348" className="inline-block mt-5 text-nav text-[rgba(255,255,255,0.6)] hover:text-white transition-colors duration-150">
+            <a href="tel:5058961348" className="inline-block mt-5 text-nav text-[rgba(255,255,255,0.6)] hover:text-white transition-colors duration-150 animate-hero-delay-4">
               (505) 896-1348 — call anytime
             </a>
           </div>

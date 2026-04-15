@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import WireframeSphere from "@/components/WireframeSphere";
+import HeroOrb from "@/components/HeroOrb";
 
 export const metadata: Metadata = {
   title: "Retirement Planning | Innovative Investment Professionals",
@@ -74,7 +74,7 @@ export default function RetirementPlanningPage() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden pt-44 pb-28 px-6 page-hero">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
-          <WireframeSphere className="w-full h-full" />
+          <HeroOrb className="w-full h-full" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="max-w-2xl">
