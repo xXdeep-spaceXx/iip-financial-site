@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us — Innovative Investment Professionals</title>
-<meta name="description" content="Contact Innovative Investment Professionals in Albuquerque and Rio Rancho, NM. Call 505-896-1348 or email crael@iip.services to schedule a consultation.">
+<title>Client Appreciation Events — Innovative Investment Professionals</title>
+<meta name="description" content="Upcoming client appreciation events for Chris Rael's clients. Albuquerque Isotopes games at Rio Grande Credit Union Field. Reserve your tickets by calling (505) 896-1348.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +42,6 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .nav-links a.active { color: var(--accent); background: rgba(123,45,139,0.08); font-weight: 600; }
 .nav-cta { padding: 9px 22px !important; background: var(--accent) !important; color: white !important; }
 .nav-cta:hover { background: var(--accent-l) !important; }
-/* ── Nav Dropdown ── */
 .nav-dropdown { position: relative; }
 .dropdown-menu {
   position: absolute; top: calc(100% + 10px); left: 50%;
@@ -97,109 +96,149 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   .nav-hamburger { display: flex; }
 }
 
+/* ── Page Hero ── */
 .page-hero {
-  background: linear-gradient(135deg, var(--accent-d) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, #3d1254 0%, var(--accent) 60%, var(--accent-l) 100%);
   padding: 140px 40px 80px; text-align: center; position: relative; overflow: hidden;
 }
-.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.07), transparent 60%); }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.08), transparent 60%); }
 .breadcrumb { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 20px; position: relative; }
 .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
 .breadcrumb a:hover { color: rgba(255,255,255,0.9); }
 .breadcrumb span { color: rgba(255,255,255,0.3); }
-.page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(34px,5vw,58px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 16px; position: relative;  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.page-hero p { font-size: 18px; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto; line-height: 1.7; position: relative; }
+.page-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(34px,5vw,58px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 16px; position: relative; letter-spacing: -0.02em; font-optical-sizing: auto; }
+.page-hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 580px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+.hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+.hero-badge { padding: 8px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; font-size: 13px; font-weight: 600; color: #fff; }
 
+/* ── Grain ── */
+.page-hero::after,
+#page-cta::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px; opacity: 0.05; mix-blend-mode: overlay;
+}
+#page-cta { position: relative; overflow: hidden; }
+
+/* ── Reserve banner ── */
+.reserve-banner {
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  padding: 18px 40px; text-align: center;
+}
+.reserve-banner p { font-size: 14px; color: var(--text-2); }
+.reserve-banner a { color: var(--accent); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.reserve-banner a:hover { text-decoration: underline; }
+
+/* ── Events Grid ── */
 .wrap { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
 @media(max-width:640px) { .wrap { padding: 60px 24px; } }
 .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-l); margin-bottom: 14px; }
 .section-label::before { content:''; display:block; width:24px; height:1px; background:var(--accent-l); }
-.section-title { font-family: 'Fraunces', serif; font-size: clamp(26px,3.5vw,40px); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 14px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+.section-title { font-family: 'Fraunces', serif; font-size: clamp(26px,3.5vw,42px); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; font-optical-sizing: auto; }
 .section-title span { background: linear-gradient(135deg, var(--accent), var(--accent-l)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.section-sub { font-size: 16px; color: var(--text-2); max-width: 560px; line-height: 1.75; margin-bottom: 48px; }
 
-/* ── Contact Layout ── */
-.contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
-@media(max-width:900px) { .contact-layout { grid-template-columns: 1fr; gap: 48px; } }
-
-/* ── Info Side ── */
-.contact-info { display: flex; flex-direction: column; gap: 24px; }
-.contact-block { padding: 28px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); transition: border-color 0.3s; }
-.contact-block:hover { border-color: var(--border-h); }
-.contact-block-header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
-.contact-block-icon { width: 44px; height: 44px; border-radius: var(--r-sm); background: rgba(123,45,139,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-.contact-block h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--text);  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.contact-block a { font-size: 15px; color: var(--accent-l); text-decoration: none; font-weight: 500; display: block; transition: color 0.2s; }
-.contact-block a:hover { color: var(--accent); }
-.contact-block p { font-size: 13px; color: var(--text-3); margin-top: 4px; }
-.locations { display: flex; flex-direction: column; gap: 8px; }
-.location { font-size: 14px; color: var(--text-2); display: flex; align-items: center; gap: 8px; }
-.location::before { content: '📍'; font-size: 14px; }
-.location-note { font-size: 13px; color: var(--text-3); margin-top: 10px; }
-.location-directions { color: var(--accent); text-decoration: none; font-weight: 500; }
-.location-directions:hover { text-decoration: underline; }
-
-/* ── Advisors ── */
-.advisor-cards { display: flex; flex-direction: column; gap: 12px; }
-.advisor-card { padding: 18px 20px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r-sm); display: flex; align-items: center; gap: 16px; transition: border-color 0.3s; }
-.advisor-card:hover { border-color: var(--border-h); }
-.advisor-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-l)); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700; color: white; flex-shrink: 0;  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.advisor-info { flex: 1; }
-.advisor-info strong { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700; color: var(--text); display: block;  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.advisor-info span { font-size: 12px; color: var(--text-3); }
-.advisor-card a { font-size: 12px; font-weight: 600; color: var(--accent-l); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
-.advisor-card a:hover { color: var(--accent); }
-
-/* ── Form ── */
-.contact-form-wrap { padding: 40px; background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); }
-.contact-form-wrap h2 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 6px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.contact-form-wrap > p { font-size: 14px; color: var(--text-3); margin-bottom: 28px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media(max-width:540px) { .form-row { grid-template-columns: 1fr; } }
-.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.form-group label { font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text-3); }
-.form-group input, .form-group select, .form-group textarea {
-  padding: 12px 16px; background: #ffffff; border: 1px solid var(--border);
-  border-radius: var(--r-sm); font-size: 14px; color: var(--text);
-  font-family: 'Inter', sans-serif; transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--accent-l); box-shadow: 0 0 0 3px rgba(123,45,139,0.08);
-}
-.form-group textarea { resize: vertical; min-height: 110px; }
-.form-group select { cursor: pointer; }
-.form-submit { width: 100%; padding: 15px; background: var(--accent); color: white; border: none; border-radius: 100px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Fraunces', serif; letter-spacing: 0.5px; transition: all 0.25s; }
-.form-submit:hover { background: var(--accent-l); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(123,45,139,0.3); }
-.form-note { font-size: 11px; color: var(--text-3); margin-top: 12px; text-align: center; line-height: 1.6; }
-.form-success { display: none; text-align: center; padding: 24px; }
-.form-success h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 8px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
-.form-success p { font-size: 14px; color: var(--text-2); }
-.success-link { color: var(--accent); }
+@media(max-width:1024px) { .events-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:560px)  { .events-grid { grid-template-columns: 1fr; } }
 
-/* ── Contact photo band ── */
-.contact-photo-band {
-  position: relative;
-  height: 320px;
+.event-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
   overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.contact-photo-band img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
-  display: block;
+.event-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(123,45,139,0.12);
 }
-.contact-photo-band::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom,
-    var(--accent-d) 0%,
-    transparent 35%,
-    transparent 65%,
-    var(--bg) 100%);
-  opacity: 0.7;
+
+.event-logo-wrap {
+  background: #f7f7f8;
+  border-bottom: 1px solid var(--border);
+  padding: 28px 20px;
+  display: flex; align-items: center; justify-content: center;
 }
-@media(max-width:640px) { .contact-photo-band { height: 220px; } }
+.isotopes-logo {
+  width: 96px; height: 96px;
+}
+
+.event-body { padding: 24px 22px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+.event-date {
+  font-family: 'Fraunces', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.event-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  width: fit-content;
+}
+.event-status.open {
+  background: rgba(34,197,94,0.12);
+  color: #16a34a;
+  border: 1px solid rgba(34,197,94,0.25);
+}
+.event-status.open::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+.event-status.full {
+  background: rgba(239,68,68,0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239,68,68,0.2);
+}
+.event-status.full::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; }
+
+.event-venue {
+  font-size: 13px; color: var(--text-2); line-height: 1.6;
+}
+.event-venue strong {
+  display: block; font-size: 14px; color: var(--text); font-weight: 600; margin-bottom: 2px;
+}
+
+.event-details { display: flex; flex-direction: column; gap: 6px; }
+.event-detail { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
+.event-detail-icon { font-size: 14px; flex-shrink: 0; }
+
+.event-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
+.event-tag {
+  padding: 4px 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  border-radius: 6px;
+}
+.event-tag.food { background: rgba(123,45,139,0.08); color: var(--accent); border: 1px solid var(--border); }
+.event-tag.bags { background: rgba(234,164,0,0.1); color: #b45309; border: 1px solid rgba(234,164,0,0.2); }
+
+/* ── How It Works ── */
+#how-to-attend { background: var(--bg2); }
+.steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+@media(max-width:768px) { .steps-grid { grid-template-columns: 1fr; } }
+.step-card { text-align: center; }
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-l));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: #fff;
+  margin: 0 auto 20px;
+}
+.step-card h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; letter-spacing: -0.02em; font-optical-sizing: auto; }
+.step-card p { font-size: 14px; color: var(--text-2); line-height: 1.75; }
 
 /* ── CTA ── */
 #page-cta { background: linear-gradient(135deg, var(--accent-d), var(--accent)); padding: 80px 40px; text-align: center; }
-#page-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: #ffffff; margin-bottom: 14px;  letter-spacing: -0.02em; font-optical-sizing: auto; }
+#page-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: #ffffff; margin-bottom: 14px; letter-spacing: -0.02em; font-optical-sizing: auto; }
 #page-cta p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 36px; line-height: 1.75; }
 .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-white { padding: 14px 30px; background: #ffffff; color: var(--accent); border-radius: 100px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.25s; }
@@ -217,26 +256,15 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 .footer-links a { font-size: 13px; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text-2); }
 .legal { max-width: 1100px; margin: 24px auto 0; padding-top: 24px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-3); line-height: 1.7; }
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
 
 #globe-bg { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
 
-/* ── Grain Texture ── */
-.page-hero::after,
-#page-cta::after {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-}
-#page-cta { position: relative; overflow: hidden; }
-@media(max-width:640px) {
-  .page-hero { padding: 100px 24px 56px; }
-  .page-hero p { font-size: 16px; }
-  #globe-bg { display: none; }
-}
 /* ── Topbar ── */
 #topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 501;
@@ -251,6 +279,12 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 #topbar .topbar-phone { font-size: 12px; font-weight: 600; color: white; text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
 #topbar .topbar-phone:hover { color: var(--accent-l); }
 @media(max-width:680px) { #topbar .topbar-msg { display: none; } #topbar { justify-content: center; } }
+@media(max-width:640px) {
+  .page-hero { padding: 100px 24px 56px; }
+  .page-hero p { font-size: 16px; }
+  #globe-bg { display: none; }
+  .reserve-banner { padding: 16px 24px; }
+}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
 </head>
@@ -260,6 +294,7 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
   <span class="topbar-msg">Serving New Mexico families since 1996</span>
   <a href="tel:5058961348" class="topbar-phone">&#9742; (505) 896-1348</a>
 </div>
+
 <nav id="navbar">
   <a href="iip.html" class="nav-brand">
     <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
@@ -268,7 +303,10 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
       <g transform="rotate(120,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(176,102,194,0.7)" stroke-width="1.2"/></g>
       <circle cx="17" cy="17" r="3" fill="#b066c2"/>
     </svg>
-    <div class="nav-wordmark"><span class="nav-word-top">Innovative</span><span class="nav-word-bot">Investment Professionals</span></div>
+    <div class="nav-wordmark">
+      <span class="nav-word-top">Innovative</span>
+      <span class="nav-word-bot">Investment Professionals</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="iip.html">Home</a></li>
@@ -285,10 +323,10 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
       <a href="seminars.html">Events</a>
       <ul class="dropdown-menu">
         <li><a href="seminars.html">Educational Seminars</a></li>
-        <li><a href="appreciation.html">Client Appreciation</a></li>
+        <li><a href="appreciation.html" class="active">Client Appreciation</a></li>
       </ul>
     </li>
-    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get Started</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -306,143 +344,145 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
     <a href="life-insurance.html">Life Insurance</a>
   </div>
   <a href="seminars.html">Seminars</a>
-  <a href="appreciation.html">Client Appreciation</a>
+  <a href="appreciation.html" class="active">Client Appreciation</a>
   <a href="contact.html">Contact</a>
   <a href="contact.html" class="mobile-cta">Get Started</a>
 </div>
 
 <div class="page-hero">
-  <div class="breadcrumb"><a href="iip.html">Home</a> <span>/</span> Contact</div>
-  <h1>Get in Touch</h1>
-  <p>No forms that feel like tax filings. Just tell us where you're at — we'll take it from there.</p>
+  <div class="breadcrumb"><a href="iip.html">Home</a> <span>/</span> Client Appreciation</div>
+  <h1>Upcoming Client<br>Appreciation Events</h1>
+  <p>A small thank-you from our family to yours. Join Chris Rael and the IIP team for an evening at the ballpark — on us.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">⚾ Albuquerque Isotopes</span>
+    <span class="hero-badge">🎟️ Tickets by Invitation</span>
+    <span class="hero-badge">🍔 Food &amp; Drinks Included</span>
+  </div>
 </div>
 
-<div class="contact-photo-band">
-  <img src="assets/retirement-family.jpg" alt="A happy retired couple enjoying time together in New Mexico" loading="lazy">
+<div class="reserve-banner">
+  <p>To reserve your tickets, please contact the office at <a href="tel:5058961348">(505) 896-1348</a> — space is limited.</p>
 </div>
 
-<!-- ── Contact ── -->
+<!-- ── Events ── -->
 <section>
   <div class="wrap">
-    <div class="contact-layout">
+    <div class="section-label">2026 Schedule</div>
+    <h2 class="section-title reveal">Game Dates &amp; <span>Details</span></h2>
+    <p class="section-sub reveal reveal-delay-1">Rio Grande Credit Union Field at Isotopes Park · 1601 Avenida Cesar Chavez SE, Albuquerque, NM 87106</p>
 
-      <!-- Info Side -->
-      <div class="contact-info">
-        <div>
-          <div class="section-label">Reach Us</div>
-          <h2 class="section-title">Let's <span>Talk</span></h2>
-          <p style="font-size:15px; color:var(--text-2); line-height:1.75; margin-bottom:28px;">No obligation, no pressure — ever. Ask us anything, even if you're just getting started.</p>
+    <div class="events-grid">
+
+      <!-- June 27 -->
+      <div class="event-card reveal">
+        <div class="event-logo-wrap">
+          <!-- Replace src with assets/isotopes-logo.png once downloaded -->
+          <svg class="isotopes-logo" viewBox="0 0 96 96" fill="none" aria-label="Albuquerque Isotopes">
+            <circle cx="48" cy="48" r="44" fill="#e8192c" stroke="#fff" stroke-width="2"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(-20 48 48)"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(20 48 48)"/>
+            <text x="48" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
+          </svg>
         </div>
-
-        <div class="contact-block reveal">
-          <div class="contact-block-header">
-            <div class="contact-block-icon">📞</div>
-            <h3>Phone</h3>
+        <div class="event-body">
+          <div class="event-date">June 27, 2026</div>
+          <div class="event-status open">Open</div>
+          <div class="event-venue">
+            <strong>Rio Grande Credit Union Field</strong>
+            at Isotopes Park
           </div>
-          <a href="tel:5058961348">(505) 896-1348</a>
-          <p>Call during business hours — we pick up</p>
-        </div>
-
-        <div class="contact-block reveal">
-          <div class="contact-block-header">
-            <div class="contact-block-icon">✉️</div>
-            <h3>Email</h3>
+          <div class="event-details">
+            <div class="event-detail"><span class="event-detail-icon">🕠</span>5:30 PM Arrival Time</div>
+            <div class="event-detail"><span class="event-detail-icon">📍</span>1601 Avenida Cesar Chavez SE</div>
           </div>
-          <a href="mailto:crael@iip.services">crael@iip.services</a>
-          <p>We respond to all inquiries within one business day</p>
-        </div>
-
-        <div class="contact-block reveal">
-          <div class="contact-block-header">
-            <div class="contact-block-icon">📍</div>
-            <h3>Locations</h3>
-          </div>
-          <div class="locations">
-            <div class="location">Albuquerque, NM</div>
-            <div class="location">4101 Barbara Loop SE, Ste B<br>Rio Rancho, NM 87124</div>
-          </div>
-          <p class="location-note">Serving families throughout New Mexico · <a href="https://maps.google.com/?q=4101+Barbara+Loop+SE+Suite+B+Rio+Rancho+NM+87124" target="_blank" rel="noopener" class="location-directions">Get directions →</a></p>
-        </div>
-
-        <div class="contact-block reveal">
-          <div class="contact-block-header">
-            <div class="contact-block-icon">👥</div>
-            <h3>Prefer to reach out directly?</h3>
-          </div>
-          <div class="advisor-cards">
-            <div class="advisor-card">
-              <div class="advisor-avatar">CR</div>
-              <div class="advisor-info"><strong>Christopher Rael</strong><span>Founder & President · since 1996</span></div>
-              <a href="mailto:crael@iip.services">Email Chris</a>
-            </div>
-            <div class="advisor-card">
-              <div class="advisor-avatar">JB</div>
-              <div class="advisor-info"><strong>Jerry Baca</strong><span>Partner · Santa Fe, NM</span></div>
-              <a href="tel:5058961348">Call Jerry</a>
-            </div>
-            <div class="advisor-card">
-              <div class="advisor-avatar">KW</div>
-              <div class="advisor-info"><strong>Kobi Worling</strong><span>Partner · Albuquerque, NM</span></div>
-              <a href="tel:5058961348">Call Kobi</a>
-            </div>
+          <div class="event-tags">
+            <span class="event-tag food">Food &amp; Drinks Provided</span>
+            <span class="event-tag bags">Clear Bags Required</span>
           </div>
         </div>
       </div>
 
-      <!-- Form Side -->
-      <div class="contact-form-wrap reveal">
-        <h2>Start the Conversation</h2>
-        <p>We read every message and reply within one business day.</p>
-        <form id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">Your first name *</label>
-              <input type="text" id="fname" name="fname" placeholder="John" required>
-            </div>
-            <div class="form-group">
-              <label for="lname">Last name *</label>
-              <input type="text" id="lname" name="lname" placeholder="Smith" required>
-            </div>
+      <!-- July 18 -->
+      <div class="event-card reveal reveal-delay-1">
+        <div class="event-logo-wrap">
+          <svg class="isotopes-logo" viewBox="0 0 96 96" fill="none" aria-label="Albuquerque Isotopes">
+            <circle cx="48" cy="48" r="44" fill="#e8192c" stroke="#fff" stroke-width="2"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(-20 48 48)"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(20 48 48)"/>
+            <text x="48" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
+          </svg>
+        </div>
+        <div class="event-body">
+          <div class="event-date">July 18, 2026</div>
+          <div class="event-status open">Open</div>
+          <div class="event-venue">
+            <strong>Rio Grande Credit Union Field</strong>
+            at Isotopes Park
           </div>
-          <div class="form-group">
-            <label for="email">Best email to reach you *</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          <div class="event-details">
+            <div class="event-detail"><span class="event-detail-icon">🕠</span>5:30 PM Arrival Time</div>
+            <div class="event-detail"><span class="event-detail-icon">📍</span>1601 Avenida Cesar Chavez SE</div>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone number (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="(505) 000-0000">
+          <div class="event-tags">
+            <span class="event-tag food">Food &amp; Drinks Provided</span>
+            <span class="event-tag bags">Clear Bags Required</span>
           </div>
-          <div class="form-group">
-            <label for="interest">What's on your mind?</label>
-            <select id="interest" name="interest">
-              <option value="">Pick a topic…</option>
-              <option value="retirement">Retirement Planning</option>
-              <option value="annuities">Annuities</option>
-              <option value="life-insurance">Life Insurance</option>
-              <option value="seminar">Upcoming Seminar</option>
-              <option value="general">General Question</option>
-            </select>
+        </div>
+      </div>
+
+      <!-- August 21 -->
+      <div class="event-card reveal reveal-delay-2">
+        <div class="event-logo-wrap">
+          <svg class="isotopes-logo" viewBox="0 0 96 96" fill="none" aria-label="Albuquerque Isotopes">
+            <circle cx="48" cy="48" r="44" fill="#e8192c" stroke="#fff" stroke-width="2"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(-20 48 48)"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(20 48 48)"/>
+            <text x="48" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
+          </svg>
+        </div>
+        <div class="event-body">
+          <div class="event-date">August 21, 2026</div>
+          <div class="event-status open">Open</div>
+          <div class="event-venue">
+            <strong>Rio Grande Credit Union Field</strong>
+            at Isotopes Park
           </div>
-          <div class="form-group">
-            <label for="advisor">Who would you like to talk to?</label>
-            <select id="advisor" name="advisor">
-              <option value="">No preference — anyone is fine</option>
-              <option value="chris">Christopher Rael</option>
-              <option value="jerry">Jerry Baca</option>
-              <option value="kobi">Kobi Worling</option>
-            </select>
+          <div class="event-details">
+            <div class="event-detail"><span class="event-detail-icon">🕠</span>5:30 PM Arrival Time</div>
+            <div class="event-detail"><span class="event-detail-icon">📍</span>1601 Avenida Cesar Chavez SE</div>
           </div>
-          <div class="form-group">
-            <label for="message">Anything else we should know?</label>
-            <textarea id="message" name="message" placeholder="Where are you at with your retirement planning? What's keeping you up at night? We've heard it all — no judgment."></textarea>
+          <div class="event-tags">
+            <span class="event-tag food">Food &amp; Drinks Provided</span>
+            <span class="event-tag bags">Clear Bags Required</span>
           </div>
-          <button type="submit" class="form-submit">Start the Conversation →</button>
-          <p class="form-note">We'll never share your information or add you to a list without asking first.</p>
-        </form>
-        <div class="form-success" id="form-success">
-          <div style="font-size:48px;margin-bottom:16px">✅</div>
-          <h3>We got it!</h3>
-          <p>Expect to hear from us within one business day. In the meantime, feel free to call us at <a href="tel:5058961348" class="success-link">(505) 896-1348</a>.</p>
+        </div>
+      </div>
+
+      <!-- September 18 -->
+      <div class="event-card reveal reveal-delay-3">
+        <div class="event-logo-wrap">
+          <svg class="isotopes-logo" viewBox="0 0 96 96" fill="none" aria-label="Albuquerque Isotopes">
+            <circle cx="48" cy="48" r="44" fill="#e8192c" stroke="#fff" stroke-width="2"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(-20 48 48)"/>
+            <ellipse cx="48" cy="48" rx="38" ry="12" fill="none" stroke="#f5a623" stroke-width="3" transform="rotate(20 48 48)"/>
+            <text x="48" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="-1">A</text>
+          </svg>
+        </div>
+        <div class="event-body">
+          <div class="event-date">September 18, 2026</div>
+          <div class="event-status open">Open</div>
+          <div class="event-venue">
+            <strong>Rio Grande Credit Union Field</strong>
+            at Isotopes Park
+          </div>
+          <div class="event-details">
+            <div class="event-detail"><span class="event-detail-icon">🕠</span>5:30 PM Arrival Time</div>
+            <div class="event-detail"><span class="event-detail-icon">📍</span>1601 Avenida Cesar Chavez SE</div>
+          </div>
+          <div class="event-tags">
+            <span class="event-tag food">Food &amp; Drinks Provided</span>
+            <span class="event-tag bags">Clear Bags Required</span>
+          </div>
         </div>
       </div>
 
@@ -450,24 +490,48 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
   </div>
 </section>
 
-<!-- ── Seminars CTA ── -->
+<!-- ── How to Attend ── -->
+<section id="how-to-attend">
+  <div class="wrap">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title reveal">Three Easy <span>Steps</span></h2>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h3>Call the Office</h3>
+        <p>Call us at <a href="tel:5058961348" style="color:var(--accent);font-weight:600;">(505) 896-1348</a> to let us know which game you'd like to attend. Space is limited, so call early.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <h3>Reserve Your Spot</h3>
+        <p>We'll add you to the list and confirm your reservation. One ticket per household — bring a guest if spots are available.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <h3>Show Up &amp; Enjoy</h3>
+        <p>Arrive by 5:30 PM. Food and drinks are on us. Remember — clear bags only are permitted at the park.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
 <section id="page-cta">
-  <h2>Prefer to Learn in Person?</h2>
-  <p>Attend one of our free educational seminars — with a complimentary gourmet meal and zero obligation.</p>
+  <h2>Ready to Reserve Your Spot?</h2>
+  <p>Call the office to claim your tickets. These events fill up fast — don't wait.</p>
   <div class="cta-row">
-    <a href="seminars.html" class="btn-white">See Upcoming Seminars →</a>
-    <a href="tel:5058961348" class="btn-outline-white">Call (505) 896-1348</a>
+    <a href="tel:5058961348" class="btn-white">Call (505) 896-1348</a>
+    <a href="contact.html" class="btn-outline-white">Send Us a Message</a>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-copy">© 2024 Innovative Investment Professionals · Albuquerque & Rio Rancho, NM</div>
+    <div class="footer-copy">&copy; 2025 Innovative Investment Professionals &middot; Rio Rancho, NM &middot; (505) 896-1348</div>
     <nav class="footer-nav">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="seminars.html">Seminars</a>
-  <a href="appreciation.html">Client Appreciation</a>
       <a href="contact.html">Contact</a>
     </nav>
     <ul class="footer-links">
@@ -476,6 +540,7 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
     </ul>
   </div>
   <div class="legal">
+    *Backed by the claims paying ability of the carrier. **Our products offer a reasonable rate of return, over time.<br>
     This site is for informational purposes only and is not intended to be a solicitation for or offering of any product or investment. The offer for sale of an insurance product may only be conducted in a state where the agent is licensed and the product is approved for sale. Securities offered through World Equity Group, Inc., member <strong>FINRA</strong> and <strong>SIPC</strong>, a Registered Investment Adviser. Innovative Investment Professionals is not owned or controlled by World Equity Group, Inc.
   </div>
 </footer>
@@ -485,30 +550,8 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 80), { passive: true });
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Pre-select advisor from URL param (e.g. contact.html?advisor=chris)
-const params = new URLSearchParams(window.location.search);
-const advisorParam = params.get('advisor');
-if (advisorParam) {
-  const sel = document.getElementById('advisor');
-  if (sel) sel.value = advisorParam;
-}
-
-// Form submit — show success state
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const fname = document.getElementById('fname').value.trim();
-  const email = document.getElementById('email').value.trim();
-  if (!fname || !email) {
-    alert('Please fill in your name and email address.');
-    return;
-  }
-  this.style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-});
 </script>
 
-<!-- ── 3D Wireframe Globe Background ── -->
 <div id="globe-bg"></div>
 <script type="module">
 import * as THREE from 'three';
@@ -524,7 +567,6 @@ import * as THREE from 'three';
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.set(0, 0, 3.5);
 
-  // Procedural wireframe sphere — clean lat/long grid, no .glb needed
   const sphere = new THREE.SphereGeometry(0.6, 28, 18);
   const wire   = new THREE.WireframeGeometry(sphere);
   const mat    = new THREE.LineBasicMaterial({ color: 0x7b2d8b, transparent: true, opacity: 0.45 });
@@ -550,7 +592,6 @@ import * as THREE from 'three';
 </script>
 
 <script>
-// Mobile nav toggle
 (function(){
   var btn = document.getElementById('hamburger');
   var nav = document.getElementById('mobile-nav');
@@ -570,7 +611,6 @@ import * as THREE from 'three';
 })();
 </script>
 <script>
-// Topbar hide on scroll
 (function(){
   var bar = document.getElementById('topbar');
   if (!bar) return;
