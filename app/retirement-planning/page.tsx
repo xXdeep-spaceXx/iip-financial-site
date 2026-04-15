@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroOrb from "@/components/HeroOrb";
+import VideoBackground from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
   title: "Retirement Planning | Innovative Investment Professionals",
@@ -72,27 +73,34 @@ export default function RetirementPlanningPage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-44 pb-28 px-6 page-hero">
+      <VideoBackground
+        videoSrc="/videos/hero-bg.mp4"
+        fallbackSrc="/assets/retirement-beach.jpg"
+        fallbackAlt="Couple walking on a retirement beach"
+        overlayOpacity={0}
+        className="min-h-[82vh] flex items-center"
+      >
+        <div className="video-hero-overlay" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
           <HeroOrb className="w-full h-full" />
         </div>
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20">
           <div className="max-w-2xl">
-            <p className="section-label text-[rgba(255,255,255,0.7)] mb-5">Retirement Planning</p>
-            <h1 className="hero-title text-white mb-2">Build a retirement</h1>
-            <h1 className="hero-title text-[rgba(255,255,255,0.55)]">you can live on.</h1>
-            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug">
+            <p className="section-label text-[rgba(255,255,255,0.7)] mb-5 animate-hero">Retirement Planning</p>
+            <h1 className="hero-title text-white mb-2 animate-hero-delay-1">Build a retirement</h1>
+            <h1 className="hero-title text-[rgba(255,255,255,0.55)] animate-hero-delay-1">you can live on.</h1>
+            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug animate-hero-delay-2">
               IIP has helped New Mexico families build and protect their retirement
               income for over 30 years — with honesty, zero market risk, and a plan
               designed to last as long as you do.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 animate-hero-delay-3">
               <Link href="/contact" className="btn-white">Start the Conversation</Link>
               <Link href="/seminars" className="btn-hero-outline">Attend a Free Seminar</Link>
             </div>
           </div>
         </div>
-      </section>
+      </VideoBackground>
 
       {/* ── Process ── */}
       <section className="section-border py-20">

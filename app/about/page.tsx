@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | Innovative Investment Professionals",
@@ -11,6 +12,7 @@ const team = [
   {
     name: "Christopher Rael",
     title: "Founder & President",
+    photo: "/assets/Chris-Rael-Headshot.jpg",
     bio: [
       "Christopher Rael started Innovative Investment Professionals in 1996 with one intention: help people solve their investment problems through an honest, straightforward approach.",
       "Chris goes into every client relationship entirely focused on helping — taking individual situations into account, getting clients not only to retirement but through it. He'll go the extra mile to help you achieve your goals.",
@@ -20,6 +22,7 @@ const team = [
   {
     name: "Jerry Baca",
     title: "Partner",
+    photo: "/assets/Innovative-Investment-Professionals-Jerry-Baca-2.png",
     bio: [
       "Jerry Baca, a lifelong resident of Santa Fe, NM, has been in the financial services business for over 24 years. He earned a bachelor's degree in finance in 1998 and spent three years with New York Life before joining Allstate Financial.",
       "Partnering with Innovative Investment Professionals allows Jerry to offer his clients access to more choices — top insurance carriers and innovative financial products he couldn't bring to the table elsewhere.",
@@ -29,6 +32,7 @@ const team = [
   {
     name: "Kobi Worling",
     title: "Partner",
+    photo: "/assets/kobi-worling-headshot.jpg",
     bio: [
       "Kobi Worling has been an accounting professional in Albuquerque and the surrounding area since 1999, with her focus on business planning, budgeting, and forecasting.",
       "She partnered with Innovative Investment Professionals to bring the expertise of a Financial Services and Insurance Industry leader to her existing client base — combining her accounting background with IIP's retirement planning depth.",
@@ -90,6 +94,17 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Photo band ── */}
+      <div className="relative h-64 md:h-80 overflow-hidden">
+        <Image
+          src="/assets/group-of-senior-friends-walking-together-outdoors-planning-for-retirement-1024x567.jpg"
+          alt="Seniors walking together outdoors"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[var(--accent-d)] opacity-40" />
+      </div>
+
       {/* ── Team ── */}
       <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
@@ -97,19 +112,31 @@ export default function AboutPage() {
           <h2 className="section-title mb-2">Meet the team.</h2>
           <p className="text-body-lg body-text mb-12">Real people. Real experience. No call centers.</p>
 
-          <div className="space-y-px bg-[var(--border)] rounded-2xl overflow-hidden">
-            {team.map(({ name, title, bio }) => (
-              <div key={name} className="bg-bg p-8 md:p-10 grid md:grid-cols-3 gap-8">
-                <div>
-                  <h3 className="text-card-h fv-body-semi font-semibold text-ink">{name}</h3>
-                  <p className="text-nav fv-nav text-ink3 mt-1">{title}</p>
-                </div>
-                <div className="md:col-span-2 space-y-4">
-                  {bio.map((paragraph, i) => (
-                    <p key={i} className="text-body fv-body body-text leading-snug">
-                      {paragraph}
-                    </p>
-                  ))}
+          <div className="space-y-8">
+            {team.map(({ name, title, photo, bio }) => (
+              <div key={name} className="iip-card overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  {/* Photo */}
+                  <div className="relative w-full md:w-56 h-60 md:h-auto shrink-0">
+                    <Image
+                      src={photo}
+                      alt={name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Bio */}
+                  <div className="p-8 md:p-10 flex flex-col justify-center">
+                    <h3 className="text-card-h fv-body-semi font-semibold text-ink">{name}</h3>
+                    <p className="text-nav fv-nav text-accent mt-1 mb-4 font-semibold">{title}</p>
+                    <div className="space-y-3">
+                      {bio.map((paragraph, i) => (
+                        <p key={i} className="text-body fv-body body-text leading-snug">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
