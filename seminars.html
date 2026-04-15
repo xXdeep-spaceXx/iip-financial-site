@@ -115,6 +115,38 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .hero-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(61,26,96,0.6) 0%, transparent 60%); }
 
+/* ── Venue Band ── */
+.venue-band {
+  position: relative; height: 220px; overflow: hidden;
+}
+.venue-band img.venue-photo {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 60%;
+  display: block;
+}
+.venue-band::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10,5,15,0.72) 0%, rgba(10,5,15,0.45) 50%, transparent 100%);
+}
+.venue-badge {
+  position: absolute; top: 50%; left: 40px; transform: translateY(-50%);
+  z-index: 2; display: flex; align-items: center; gap: 18px;
+}
+.venue-badge-text { display: flex; flex-direction: column; }
+.venue-badge-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+.venue-badge-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1.2; }
+.venue-logo {
+  height: 48px; width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+@media(max-width:640px) {
+  .venue-band { height: 160px; }
+  .venue-badge { left: 20px; gap: 12px; }
+  .venue-logo { height: 36px; }
+  .venue-badge-name { font-size: 16px; }
+}
+
 .wrap { max-width: 1100px; margin: 0 auto; padding: 80px 40px; }
 @media(max-width:640px) { .wrap { padding: 60px 24px; } }
 .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-l); margin-bottom: 14px; }
@@ -292,8 +324,20 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 
 <!-- ── Hero Photo ── -->
 <div class="hero-photo">
-  <img src="assets/seminar-couple.jpg" alt="Smiling senior couple enjoying a gourmet meal at a retirement seminar">
+  <img src="assets/smiling-senior-couple-eating-gourmet-meal-at-seminar-about-planning-for-retirement-1.jpg" alt="Smiling senior couple enjoying a gourmet meal at a retirement seminar">
   <div class="hero-photo-overlay"></div>
+</div>
+
+<!-- ── Venue Band ── -->
+<div class="venue-band">
+  <img src="assets/stylish-gourmet-restaurant-hosting-educational-seminar-retirement-1024x567.jpeg" class="venue-photo" alt="Elegant restaurant venue for IIP retirement seminars" loading="lazy">
+  <div class="venue-badge">
+    <img src="assets/Ruth-Chris-Logo.png" class="venue-logo" alt="Ruth's Chris Steak House">
+    <div class="venue-badge-text">
+      <span class="venue-badge-label">Hosted at</span>
+      <span class="venue-badge-name">Ruth's Chris Steak House</span>
+    </div>
+  </div>
 </div>
 
 <!-- ── What to Expect ── -->
