@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /iip-prompts.html
+
+Sitemap: https://iip.services/sitemap.xml
