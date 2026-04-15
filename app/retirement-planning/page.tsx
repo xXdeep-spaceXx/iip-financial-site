@@ -74,7 +74,7 @@ export default function RetirementPlanningPage() {
     <div>
       {/* ── Hero ── */}
       <VideoBackground
-        videoSrc="/videos/hero-bg.mp4"
+        videoSrc="/assets/AZ2IlK1xquln6jN3FHuRzA-AZ2IlK1xHsl1dw-Q9PrzJQ.mp4"
         fallbackSrc="/assets/retirement-beach.jpg"
         fallbackAlt="Couple walking on a retirement beach"
         overlayOpacity={0}

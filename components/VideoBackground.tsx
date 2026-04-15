@@ -27,31 +27,46 @@ export default function VideoBackground({
   className = "",
 }: VideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
       video.pause();
       return;
     }
 
     // Apply slow-motion — set on canplay so it sticks after src load
-    const applyRate = () => {
-      video.playbackRate = playbackRate;
-    };
-
+    const applyRate = () => { video.playbackRate = playbackRate; };
     video.addEventListener("canplay", applyRate);
-    // Also set immediately in case already loaded
     if (video.readyState >= 3) applyRate();
 
-    return () => video.removeEventListener("canplay", applyRate);
+    // Parallax: move video at 35% of scroll speed
+    const handleScroll = () => {
+      const wrap = wrapRef.current;
+      if (!wrap) return;
+      const rect = wrap.getBoundingClientRect();
+      // Only apply when section is in view
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const offset = window.scrollY * 0.35;
+      video.style.transform = `translateY(${offset}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      video.removeEventListener("canplay", applyRate);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [playbackRate]);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div ref={wrapRef} className={`relative overflow-hidden ${className}`}>
       {/* Fallback image — fades out once video is ready */}
       <Image
         suppressHydrationWarning
@@ -73,7 +88,7 @@ export default function VideoBackground({
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="video-parallax-media"
         aria-hidden="true"
         onCanPlay={() => setVideoReady(true)}
       >

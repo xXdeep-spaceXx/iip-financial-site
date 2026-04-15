@@ -267,6 +267,17 @@
     background: linear-gradient(to bottom, transparent, var(--bg));
   }
 
+  /* ── Video parallax media element (oversized so translateY doesn't show edges) ── */
+  .video-parallax-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 130%;
+    top: -15%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   /* ── Footer ── */
   .footer-root {
     background: var(--bg3);
