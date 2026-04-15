@@ -63,7 +63,7 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-nav fv-nav-semi font-semibold text-black tracking-tight">
-          Innovative Investment
+          Innovative Investment Professionals
         </Link>
 
         {/* Desktop links */}
