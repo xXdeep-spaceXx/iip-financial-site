@@ -37,7 +37,7 @@ body {
   font-family: 'Inter', -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.80;
   overflow-x: hidden;
 }
 
@@ -116,7 +116,7 @@ body {
 /* ── Navbar ── */
 #navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 36px; left: 0; right: 0;
   z-index: 500;
   padding: 0 40px;
   height: 70px;
@@ -299,14 +299,14 @@ body {
   box-shadow: 0 4px 30px rgba(123,45,139,0.3);
   transition: all 0.25s;
 }
-.btn-primary:hover { background: var(--accent-l); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--accent-l); transform: translateY(-2px) scale(1.03); }
 .btn-secondary {
   padding: 14px 30px; background: transparent; color: var(--text);
   border: 1px solid var(--border); border-radius: 100px;
   font-size: 15px; font-weight: 500; cursor: pointer;
   text-decoration: none; transition: all 0.25s;
 }
-.btn-secondary:hover { border-color: var(--border-h); background: rgba(123,45,139,0.05); }
+.btn-secondary:hover { border-color: var(--border-h); background: rgba(123,45,139,0.05); transform: scale(1.03); }
 .scroll-hint {
   position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center; gap: 8px;
@@ -548,7 +548,7 @@ body {
 .about-points { display: flex; flex-direction: column; gap: 24px; }
 .about-point {
   display: flex; gap: 18px; align-items: flex-start;
-  padding: 20px 24px; background: var(--card);
+  padding: 28px 32px; background: var(--card);
   border: 1px solid var(--border); border-radius: var(--r-sm);
   transition: border-color 0.3s;
 }
@@ -677,6 +677,38 @@ footer {
   .hero-title { font-size: clamp(32px, 9vw, 48px); }
   #globe-bg { display: none; }
 }
+/* ── Hero Trust Row ── */
+.hero-trust {
+  display: flex; gap: 10px; align-items: center; justify-content: center;
+  flex-wrap: wrap; margin-top: 28px; position: relative; z-index: 1;
+}
+.hero-trust-item {
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-3);
+}
+.hero-trust-sep { width: 1px; height: 12px; background: var(--border); flex-shrink: 0; }
+.hero-phone {
+  font-size: 14px; font-weight: 500; color: var(--text-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: color 0.2s; width: 100%; justify-content: center; padding-top: 4px;
+}
+.hero-phone svg { width: 14px; height: 14px; }
+.hero-phone:hover { color: var(--accent); }
+
+/* ── Topbar ── */
+#topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 501;
+  height: 36px;
+  background: var(--accent-d);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#topbar.hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+#topbar .topbar-msg { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.65); letter-spacing: 0.3px; }
+#topbar .topbar-phone { font-size: 12px; font-weight: 600; color: white; text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s; }
+#topbar .topbar-phone:hover { color: var(--accent-l); }
+@media(max-width:680px) { #topbar .topbar-msg { display: none; } #topbar { justify-content: center; } }
 </style>
 </head>
 <body>
@@ -705,6 +737,10 @@ footer {
 <div id="progress"></div>
 
 <!-- ── Navbar ── -->
+<div id="topbar">
+  <span class="topbar-msg">Serving New Mexico families since 1996</span>
+  <a href="tel:5058961348" class="topbar-phone">&#9742; (505) 896-1348</a>
+</div>
 <nav id="navbar">
   <a href="#" class="nav-brand">
     <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
@@ -760,11 +796,22 @@ footer {
   <div class="hero-orb-1"></div>
   <div class="hero-orb-2"></div>
   <div class="hero-eyebrow"><span class="dot"></span>Financial Planning &amp; Wealth Management</div>
-  <h1 class="hero-title">A <span>Scientific</span> Approach<br>to Your Financial Future</h1>
-  <p class="hero-sub">Precision-driven retirement planning, annuities, and life insurance strategies — built on analysis and a commitment to your long-term security.</p>
+  <h1 class="hero-title">Retire with <span>more</span><br>than you planned on.</h1>
+  <p class="hero-sub">Retirement planning, annuities, and life insurance strategies built around your life — not a product checklist. Serving New Mexico families since 1996.</p>
   <div class="hero-buttons">
     <a href="#seminars" class="btn-primary">Schedule a Consultation →</a>
     <a href="#scroll-anim" class="btn-secondary">Explore Our Approach</a>
+    <a href="tel:5058961348" class="hero-phone">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h3l1.5 3.5L6 7a9 9 0 003 3l1.5-1.5L14 10v3a1 1 0 01-1 1A12 12 0 012 3a1 1 0 011-1z"/></svg>
+      Or call us: (505) 896-1348
+    </a>
+  </div>
+  <div class="hero-trust">
+    <span class="hero-trust-item">30+ years</span>
+    <span class="hero-trust-sep"></span>
+    <span class="hero-trust-item">500+ families</span>
+    <span class="hero-trust-sep"></span>
+    <span class="hero-trust-item">Albuquerque &amp; Rio Rancho, NM</span>
   </div>
   <div class="scroll-hint">
     <span>Scroll to explore</span>
@@ -1181,6 +1228,16 @@ countEls.forEach(el => cObs.observe(el));
       document.body.style.overflow = '';
     });
   });
+})();
+</script>
+<script>
+// Topbar hide on scroll
+(function(){
+  var bar = document.getElementById('topbar');
+  if (!bar) return;
+  window.addEventListener('scroll', function(){
+    bar.classList.toggle('hidden', window.scrollY > 80);
+  }, { passive: true });
 })();
 </script>
 </body>
