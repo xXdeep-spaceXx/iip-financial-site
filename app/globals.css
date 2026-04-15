@@ -2,11 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Inter Variable OpenType features (matches Framer site) ── */
+/* ─────────────────────────────────────────────────────
+   IIP Design System — CSS Custom Properties
+   ───────────────────────────────────────────────────── */
 @layer base {
   :root {
-    --font-inter: "Inter", sans-serif;
-    --ot-features: "cv09" on, "cv01" on, "cv11" on, "cv05" on;
+    /* Palette */
+    --bg:       #F9F7F2;
+    --bg2:      #f4f1eb;
+    --bg3:      #ede9e0;
+    --accent:   #7B2D8B;
+    --accent-l: #b066c2;
+    --accent-d: #3d1254;
+    --text:     #1a1a2e;
+    --text2:    #4a4a6a;
+    --text3:    #7a7a9a;
+    --white:    #ffffff;
+    --border:   rgba(26, 26, 46, 0.10);
+    --shadow:   0 4px 24px rgba(123, 45, 139, 0.12);
+    --radius:   16px;
+    --radius-sm: 10px;
+
+    /* Font variables (populated by next/font in layout.tsx) */
+    --font-inter:    "Inter", sans-serif;
+    --font-grotesk:  "Space Grotesk", sans-serif;
+    --font-fraunces: "Fraunces", serif;
+
+    /* OpenType features */
+    --ot-grotesk: "ss01" on;
+    --ot-inter:   "cv09" on, "cv01" on, "cv11" on, "cv05" on;
   }
 
   html {
@@ -14,55 +38,144 @@
   }
 
   body {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background: var(--bg);
+    color: var(--text);
     font-family: var(--font-inter), "Inter", sans-serif;
-    font-feature-settings: var(--ot-features);
+    font-feature-settings: var(--ot-inter);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--accent);
+    color: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+    color: var(--text);
   }
 }
 
+/* ─────────────────────────────────────────────────────
+   Reveal animation (driven by ScrollReveal component)
+   ───────────────────────────────────────────────────── */
+@layer base {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+}
 
+/* ─────────────────────────────────────────────────────
+   Component classes
+   ───────────────────────────────────────────────────── */
 @layer components {
-  /* ── Buttons — exact Framer weight/size ── */
+
+  /* ── Buttons ── */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-5 py-2.5
-           bg-black text-white text-nav font-semibold
-           rounded-full transition-opacity duration-150
-           hover:opacity-80 active:scale-95;
+           text-nav font-semibold text-white rounded-full
+           transition-all duration-150 active:scale-95;
+    background: var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-feature-settings: var(--ot-grotesk);
+  }
+  .btn-primary:hover {
+    background: var(--accent-l);
   }
 
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-5 py-2.5
-           bg-white text-black text-nav font-semibold
-           border border-border rounded-full
-           transition-colors duration-150
-           hover:bg-muted active:scale-95;
+           text-nav font-semibold rounded-full
+           transition-all duration-150 active:scale-95;
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-feature-settings: var(--ot-grotesk);
+  }
+  .btn-secondary:hover {
+    background: var(--accent);
+    color: #fff;
   }
 
-  /* ── Cards ── */
-  .card {
-    @apply bg-surface border border-border rounded-2xl overflow-hidden;
+  /* Ghost button for use on dark/hero backgrounds */
+  .btn-hero-outline {
+    @apply inline-flex items-center gap-2 px-5 py-2.5
+           text-nav font-semibold rounded-full
+           transition-all duration-150 active:scale-95;
+    background: rgba(255, 255, 255, 0.10);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.50);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  }
+  .btn-hero-outline:hover {
+    background: rgba(255, 255, 255, 0.20);
   }
 
-  /* ── Section divider ── */
+  .btn-white {
+    @apply inline-flex items-center gap-2 px-5 py-2.5
+           text-nav font-semibold rounded-full
+           transition-all duration-150 active:scale-95;
+    background: #fff;
+    color: var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-feature-settings: var(--ot-grotesk);
+  }
+  .btn-white:hover {
+    background: var(--bg3);
+  }
+
+  /* ── Section / layout helpers ── */
   .section-border {
-    @apply border-t border-border;
+    border-top: 1px solid var(--border);
   }
 
-  /* ── Secondary color ── */
-  .text-secondary {
-    color: rgb(153, 153, 153);
+  /* ── IIP card ── */
+  .iip-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(26,26,46,0.06);
   }
 
-  /* ── Inter Variable font-variation-settings ──────────────────
-     Defined as CSS classes so inline style attributes are never
-     needed — this prevents Dark Reader from causing hydration
-     mismatches by modifying inline styles before React hydrates. */
+  /* ── Typography helpers ── */
+  .section-label {
+    @apply text-nav font-semibold uppercase tracking-widest;
+    color: var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-feature-settings: var(--ot-grotesk);
+  }
+
+  .section-title {
+    @apply text-section font-bold leading-tight;
+    font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+    color: var(--text);
+  }
+
+  .hero-title {
+    @apply text-hero font-bold leading-none;
+    font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+    color: var(--text);
+    letter-spacing: -0.03em;
+  }
+
+  .body-text {
+    color: var(--text2);
+    font-family: var(--font-inter), "Inter", sans-serif;
+  }
+
+  /* ── Inter Variable font-variation-settings ── */
   .fv-nav       { font-variation-settings: "opsz" 20, "wght" 500; }
   .fv-nav-semi  { font-variation-settings: "opsz" 20, "wght" 600; }
   .fv-body      { font-variation-settings: "opsz" 32, "wght" 500; }
@@ -70,18 +183,211 @@
   .fv-body-bold { font-variation-settings: "opsz" 32, "wght" 700; }
   .fv-foot      { font-variation-settings: "opsz" 24, "wght" 500; }
 
-  /* ── Hero overlay text colors (semi-transparent white) ── */
-  .text-white-50  { color: rgba(255, 255, 255, 0.50); }
-  .text-white-60  { color: rgba(255, 255, 255, 0.60); }
-  .text-white-65  { color: rgba(255, 255, 255, 0.65); }
+  /* ── Secondary text color ── */
+  .text-secondary { color: var(--text3); }
 
-  /* ── Nav link active/inactive ── */
-  .nav-link-active   { color: rgb(0, 0, 0); }
-  .nav-link-inactive { color: rgb(153, 153, 153); }
+  /* ── Nav link states ── */
+  .nav-link-active   { color: var(--accent); font-weight: 600; }
+  .nav-link-inactive { color: var(--text2); }
+  .nav-link-inactive:hover { color: var(--accent); }
 
-  /* ── VideoBackground ── */
-  /* Use a CSS class for the bottom gradient so it's never an inline style */
-  .video-fade-bottom {
-    background: linear-gradient(to bottom, transparent, rgb(255, 255, 255));
+  /* ── Topbar ── */
+  .topbar {
+    background: var(--accent-d);
+    color: rgba(255,255,255,0.85);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.01em;
   }
+
+  /* ── Page hero band ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--accent-d) 0%, var(--accent) 60%, var(--accent-l) 100%);
+    color: #fff;
+  }
+
+  /* ── Review / testimonial card ── */
+  .review-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(26,26,46,0.06);
+  }
+
+  /* ── Star row ── */
+  .stars {
+    color: #f59e0b;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+
+  /* ── Divider line ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Stat number ── */
+  .stat-number {
+    @apply text-section font-bold;
+    font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+    color: var(--accent);
+  }
+
+  /* ── Accent chip / badge ── */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-nav font-semibold;
+    background: rgba(123, 45, 139, 0.10);
+    color: var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  }
+
+  /* ── Video background fade ── */
+  .video-fade-bottom {
+    background: linear-gradient(to bottom, transparent, var(--bg));
+  }
+
+  /* ── Footer ── */
+  .footer-root {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-body {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  .footer-heading {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  }
+
+  .footer-link {
+    font-size: 14px;
+    color: var(--text2);
+    transition: color 0.15s;
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  }
+  .footer-link:hover {
+    color: var(--accent);
+  }
+
+  .footer-meta {
+    font-size: 13px;
+    color: var(--text3);
+  }
+
+  .footer-legal {
+    font-size: 12px;
+    color: var(--text3);
+    line-height: 1.7;
+  }
+
+  .footer-legal-link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.15s;
+  }
+  .footer-legal-link:hover {
+    opacity: 0.7;
+  }
+
+  /* ── Navigation ── */
+  .nav-logo {
+    color: var(--accent);
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .nav-link {
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .nav-dropdown-panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-weight: 500;
+    color: var(--text2);
+    transition: color 0.1s;
+  }
+  .nav-dropdown-item:hover {
+    color: var(--accent);
+  }
+
+  .nav-hamburger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.2s;
+    transform-origin: center;
+    border-radius: 1px;
+  }
+
+  .nav-mobile-menu {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-mobile-link {
+    font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+    display: block;
+  }
+  .nav-mobile-link:last-child {
+    border-bottom: none;
+  }
+
+  /* ── Form inputs ── */
+  .contact-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    font-family: var(--font-inter), "Inter", sans-serif;
+    transition: border-color 0.15s;
+    outline: none;
+  }
+  .contact-input::placeholder {
+    color: var(--text3);
+  }
+  .contact-input:focus {
+    border-color: var(--accent-l);
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--accent-l); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 }

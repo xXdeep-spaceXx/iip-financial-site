@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WireframeSphere from "@/components/WireframeSphere";
 
 export const metadata: Metadata = {
   title: "Innovative Investment Professionals | Retirement Planning in Rio Rancho, NM",
@@ -51,42 +52,68 @@ const principles = [
   { title: "Keep it simple.", description: "If you can't explain your plan in plain English, it's too complicated. Ours aren't." },
 ];
 
+const reviews = [
+  {
+    name: "Tom Plummer",
+    stars: 5,
+    text: "Chris is one of the most knowledgeable financial advisors I have ever worked with. He truly cares about his clients and goes above and beyond to make sure they are taken care of.",
+  },
+  {
+    name: "Richard Valdez",
+    stars: 5,
+    text: "Christopher Rael is very professional and knowledgeable. He explained everything thoroughly and was patient with all our questions. We feel confident in our retirement plan.",
+  },
+  {
+    name: "Carol Bellows",
+    stars: 5,
+    text: "IIP has been managing our retirement for years. Chris always has our best interest at heart and we could not be more satisfied with the results.",
+  },
+];
+
 export default function HomePage() {
   return (
-    <div className="bg-white">
+    <div>
       {/* ── Hero ── */}
-      <section className="pt-32 pb-24 px-6 text-center max-w-3xl mx-auto">
-        <p className="text-nav fv-nav text-secondary uppercase tracking-widest mb-5">
-          Rio Rancho &amp; Albuquerque, NM · Since 1996
-        </p>
-        <h1 className="text-hero fv-body-bold font-bold text-black leading-tight">
-          Retire with more
-        </h1>
-        <h1 className="text-hero fv-body-bold font-bold text-secondary leading-tight">
-          than you planned on.
-        </h1>
-        <p className="text-body-lg fv-body text-secondary mt-6 max-w-xl mx-auto leading-snug">
-          Innovative Investment Professionals has helped New Mexico families build
-          and protect their retirement income for over 30 years — with honesty,
-          clarity, and zero market risk.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/retirement-planning" className="btn-primary">Start Planning</Link>
-          <Link href="/seminars" className="btn-secondary">See Free Seminars</Link>
+      <section className="relative overflow-hidden pt-44 pb-28 px-6">
+        <div className="absolute inset-0 page-hero opacity-90 pointer-events-none" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[480px] h-[480px] hidden lg:block pointer-events-none">
+          <WireframeSphere className="w-full h-full" />
         </div>
-        <a href="tel:5058961348" className="inline-block mt-5 text-nav fv-nav text-secondary hover:text-black transition-colors duration-150">
-          (505) 896-1348 — call anytime
-        </a>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="max-w-2xl">
+            <p className="section-label text-[rgba(255,255,255,0.7)] mb-5">
+              Rio Rancho &amp; Albuquerque, NM · Since 1996
+            </p>
+            <h1 className="hero-title text-white mb-2">
+              Retire with more
+            </h1>
+            <h1 className="hero-title text-[rgba(255,255,255,0.55)]">
+              than you planned on.
+            </h1>
+            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug">
+              Innovative Investment Professionals has helped New Mexico families build
+              and protect their retirement income for over 30 years — with honesty,
+              clarity, and zero market risk.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/retirement-planning" className="btn-white">Start Planning</Link>
+              <Link href="/seminars" className="btn-hero-outline">See Free Seminars</Link>
+            </div>
+            <a href="tel:5058961348" className="inline-block mt-5 text-nav text-[rgba(255,255,255,0.6)] hover:text-white transition-colors duration-150">
+              (505) 896-1348 — call anytime
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* ── Stats ── */}
-      <section className="section-border">
+      <section className="section-border bg-bg2">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[var(--border)]">
             {stats.map(({ stat, label }) => (
               <div key={label} className="px-8 py-10 text-center">
-                <p className="text-section fv-body-bold font-bold text-black">{stat}</p>
-                <p className="text-nav fv-nav text-secondary mt-1">{label}</p>
+                <p className="stat-number">{stat}</p>
+                <p className="text-nav fv-nav text-ink2 mt-1">{label}</p>
               </div>
             ))}
           </div>
@@ -96,24 +123,21 @@ export default function HomePage() {
       {/* ── Services ── */}
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            Everything you need to retire well.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
-            Four services. One team. All built around your goals.
-          </p>
-          <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
+          <p className="section-label mb-3">What We Do</p>
+          <h2 className="section-title mb-2">Everything you need to retire well.</h2>
+          <p className="text-body-lg body-text mb-12">Four services. One team. All built around your goals.</p>
+          <div className="grid md:grid-cols-2 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {services.map(({ number, title, description, href }) => (
               <Link
                 key={number}
                 href={href}
-                className="bg-white p-8 flex flex-col gap-4 hover:bg-muted transition-colors duration-150 group"
+                className="bg-bg p-8 flex flex-col gap-4 hover:bg-bg2 transition-colors duration-150 group"
               >
-                <span className="text-nav fv-nav text-secondary">{number}</span>
-                <h3 className="text-card-h fv-body-semi font-semibold text-black group-hover:underline underline-offset-2">
+                <span className="text-nav fv-nav text-accent">{number}</span>
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink group-hover:underline underline-offset-2">
                   {title} →
                 </h3>
-                <p className="text-body fv-body text-secondary leading-snug">{description}</p>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </Link>
             ))}
           </div>
@@ -121,19 +145,16 @@ export default function HomePage() {
       </section>
 
       {/* ── Principles ── */}
-      <section className="section-border py-20">
+      <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            Our approach.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
-            Three principles behind every recommendation we make.
-          </p>
-          <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+          <p className="section-label mb-3">Our Approach</p>
+          <h2 className="section-title mb-2">How we think.</h2>
+          <p className="text-body-lg body-text mb-12">Three principles behind every recommendation we make.</p>
+          <div className="grid md:grid-cols-3 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {principles.map(({ title, description }) => (
-              <div key={title} className="bg-white p-8">
-                <h3 className="text-card-h fv-body-semi font-semibold text-black mb-2">{title}</h3>
-                <p className="text-body fv-body text-secondary leading-snug">{description}</p>
+              <div key={title} className="bg-bg p-8">
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink mb-2">{title}</h3>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </div>
             ))}
           </div>
@@ -144,34 +165,47 @@ export default function HomePage() {
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-nav fv-nav text-secondary uppercase tracking-widest mb-4">
-              Meet the founder
-            </p>
-            <h2 className="text-section fv-body-bold font-bold text-black mb-6">
-              Christopher Rael
-            </h2>
-            <p className="text-body fv-body text-secondary leading-snug mb-4">
+            <p className="section-label mb-4">Meet the Founder</p>
+            <h2 className="section-title mb-6">Christopher Rael</h2>
+            <p className="text-body fv-body body-text leading-snug mb-4">
               Christopher started Innovative Investment Professionals in 1996 with
               one intention: help people solve their investment problems through an
               honest, straightforward approach.
             </p>
-            <p className="text-body fv-body text-secondary leading-snug mb-8">
+            <p className="text-body fv-body body-text leading-snug mb-8">
               He&rsquo;ll get you not only to retirement — but through it. He
               goes the extra mile, takes individual situations into account, and
               has never sold a product he wouldn&rsquo;t recommend to his own family.
             </p>
             <Link href="/about" className="btn-secondary">Meet the Full Team</Link>
           </div>
-          <div className="grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {[
               { label: "Fiduciary", sub: "Always acts in your interest" },
               { label: "Fee-transparent", sub: "No hidden charges" },
               { label: "Local", sub: "Rio Rancho, NM based" },
               { label: "30+ years", sub: "In business since 1996" },
             ].map(({ label, sub }) => (
-              <div key={label} className="bg-white p-6">
-                <p className="text-card-h fv-body-semi font-semibold text-black">{label}</p>
-                <p className="text-nav fv-nav text-secondary mt-0.5">{sub}</p>
+              <div key={label} className="bg-bg p-6">
+                <p className="text-card-h fv-body-semi font-semibold text-ink">{label}</p>
+                <p className="text-nav fv-nav text-ink3 mt-0.5">{sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Reviews ── */}
+      <section className="section-border py-20 bg-bg2">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="section-label mb-3">Client Reviews</p>
+          <h2 className="section-title mb-12">What our clients say.</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {reviews.map(({ name, stars, text }) => (
+              <div key={name} className="review-card">
+                <div className="stars mb-3">{"★".repeat(stars)}</div>
+                <p className="text-body fv-body body-text leading-snug mb-4">&ldquo;{text}&rdquo;</p>
+                <p className="text-nav fv-nav-semi font-semibold text-ink">{name}</p>
               </div>
             ))}
           </div>
@@ -179,17 +213,17 @@ export default function HomePage() {
       </section>
 
       {/* ── Seminar CTA ── */}
-      <section className="section-border py-20 px-6 text-center">
-        <h2 className="text-section fv-body-bold font-bold text-black">
-          Plan your future.
-        </h2>
-        <p className="text-body-lg fv-body text-secondary mt-3 max-w-md mx-auto">
-          Start with a free retirement seminar — or call us directly. Either way,
-          there&rsquo;s no cost and no obligation.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/seminars" className="btn-primary">See Free Seminars</Link>
-          <Link href="/contact" className="btn-secondary">Contact Us</Link>
+      <section className="section-border py-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="section-title mb-3">Plan your future.</h2>
+          <p className="text-body-lg body-text mt-3 max-w-md mx-auto">
+            Start with a free retirement seminar — or call us directly. Either way,
+            there&rsquo;s no cost and no obligation.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/seminars" className="btn-primary">See Free Seminars</Link>
+            <Link href="/contact" className="btn-secondary">Contact Us</Link>
+          </div>
         </div>
       </section>
     </div>

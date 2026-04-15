@@ -38,47 +38,41 @@ const topics = [
 
 export default function SeminarsPage() {
   return (
-    <div className="bg-white">
+    <div>
       {/* ── Hero ── */}
-      <section className="pt-32 pb-20 px-6 max-w-3xl mx-auto text-center">
-        <p className="text-nav fv-nav text-secondary uppercase tracking-widest mb-4">
-          Free Seminars
-        </p>
-        <h1 className="text-hero fv-body-bold font-bold text-black leading-tight">
-          An evening of honest
-          <br />
-          financial education.
-        </h1>
-        <p className="text-body-lg fv-body text-secondary mt-6 max-w-xl mx-auto leading-snug">
-          No products pushed, no pressure applied. Just the information you need
-          to plan a confident retirement — over a complimentary dinner.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/contact" className="btn-primary">Reserve Your Seat</Link>
-          <a href="tel:5058961348" className="btn-secondary">(505) 896-1348</a>
+      <section className="page-hero pt-44 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="section-label text-[rgba(255,255,255,0.7)] mb-4">Free Seminars</p>
+          <h1 className="hero-title text-white leading-tight">
+            An evening of honest
+            <br />
+            financial education.
+          </h1>
+          <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl mx-auto leading-snug">
+            No products pushed, no pressure applied. Just the information you need
+            to plan a confident retirement — over a complimentary dinner.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/contact" className="btn-white">Reserve Your Seat</Link>
+            <a href="tel:5058961348" className="btn-hero-outline">(505) 896-1348</a>
+          </div>
         </div>
       </section>
 
       {/* ── What to expect ── */}
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            What to expect.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
-            Every seminar is designed to be informative, comfortable, and
-            completely pressure-free.
+          <p className="section-label mb-3">What to Expect</p>
+          <h2 className="section-title mb-2">What to expect.</h2>
+          <p className="text-body-lg body-text mb-12">
+            Every seminar is designed to be informative, comfortable, and completely pressure-free.
           </p>
-          <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {expectations.map(({ number, title, description }) => (
-              <div key={number} className="bg-white p-8 flex flex-col gap-4">
-                <span className="text-nav fv-nav text-secondary">{number}</span>
-                <h3 className="text-card-h fv-body-semi font-semibold text-black">
-                  {title}
-                </h3>
-                <p className="text-body fv-body text-secondary leading-snug">
-                  {description}
-                </p>
+              <div key={number} className="bg-bg p-8 flex flex-col gap-4">
+                <span className="text-nav fv-nav text-accent">{number}</span>
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink">{title}</h3>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </div>
             ))}
           </div>
@@ -86,21 +80,21 @@ export default function SeminarsPage() {
       </section>
 
       {/* ── Topics ── */}
-      <section className="section-border py-20">
+      <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-              Seminar topics.
-            </h2>
-            <p className="text-body-lg fv-body text-secondary">
+            <p className="section-label mb-3">Topics Covered</p>
+            <h2 className="section-title mb-2">Seminar topics.</h2>
+            <p className="text-body-lg body-text">
               Each seminar covers a range of relevant subjects. Bring your
               questions — we leave time for Q&amp;A at every event.
             </p>
           </div>
-          <ul className="space-y-px bg-border rounded-2xl overflow-hidden">
+          <ul className="space-y-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {topics.map((topic, i) => (
-              <li key={i} className="bg-white px-8 py-5">
-                <p className="text-body fv-body text-secondary leading-snug">{topic}</p>
+              <li key={i} className="bg-bg px-8 py-5 flex gap-3">
+                <span className="text-accent shrink-0 mt-0.5">✓</span>
+                <p className="text-body fv-body body-text leading-snug">{topic}</p>
               </li>
             ))}
           </ul>
@@ -111,44 +105,37 @@ export default function SeminarsPage() {
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-section fv-body-bold font-bold text-black mb-4">
-              Hosted at Ruth&rsquo;s Chris Steak House.
-            </h2>
-            <p className="text-body fv-body text-secondary leading-snug mb-4">
+            <p className="section-label mb-3">Venue</p>
+            <h2 className="section-title mb-4">Hosted at Ruth&rsquo;s Chris Steak House.</h2>
+            <p className="text-body fv-body body-text leading-snug mb-4">
               Our seminars are held at one of Albuquerque&rsquo;s premier dining
               destinations. A complimentary gourmet meal is included — no strings
               attached.
             </p>
-            <p className="text-body fv-body text-secondary leading-snug">
+            <p className="text-body fv-body body-text leading-snug mb-8">
               Seminars fill up quickly. Call or email us to confirm your spot at
               the next event near you.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">Reserve Your Seat</Link>
-            </div>
+            <Link href="/contact" className="btn-primary">Reserve Your Seat</Link>
           </div>
-          <div className="card p-8 text-center">
-            <p className="text-card-h fv-body-semi font-semibold text-black mb-2">
+          <div className="iip-card p-8 text-center">
+            <p className="text-card-h fv-body-semi font-semibold text-ink mb-2">
               Ruth&rsquo;s Chris Steak House
             </p>
-            <p className="text-body fv-body text-secondary mb-1">
-              Albuquerque, NM
-            </p>
-            <p className="text-nav fv-nav text-secondary">
-              Complimentary dinner included
-            </p>
+            <p className="text-body fv-body body-text mb-1">Albuquerque, NM</p>
+            <p className="chip mx-auto mt-3">Complimentary dinner included</p>
           </div>
         </div>
       </section>
 
       {/* ── Community ── */}
-      <section className="section-border py-20">
+      <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-card-h fv-body-semi font-semibold text-black mb-3">
+            <h3 className="text-card-h fv-body-semi font-semibold text-ink mb-3">
               Charity fundraisers.
             </h3>
-            <p className="text-body fv-body text-secondary leading-snug">
+            <p className="text-body fv-body body-text leading-snug">
               Many of our seminar events double as fundraisers for local charities.
               Not everyone is as fortunate as we are — for this reason, we do what
               we can to give back to our community, and we invite our clients to
@@ -156,10 +143,10 @@ export default function SeminarsPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-card-h fv-body-semi font-semibold text-black mb-3">
+            <h3 className="text-card-h fv-body-semi font-semibold text-ink mb-3">
               Help us help you.
             </h3>
-            <p className="text-body fv-body text-secondary leading-snug">
+            <p className="text-body fv-body body-text leading-snug">
               Think there&rsquo;s a charitable organization that could use our
               help? We&rsquo;d be happy to look into it. Reach out to Jerry — he
               coordinates our community event calendar and is always looking for
@@ -170,17 +157,17 @@ export default function SeminarsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section-border py-20 px-6 text-center">
-        <h2 className="text-section fv-body-bold font-bold text-black">
-          Join our next free seminar.
-        </h2>
-        <p className="text-body-lg fv-body text-secondary mt-3 max-w-md mx-auto">
-          Learn the fundamentals of retirement planning and protecting your
-          financial future — at no cost, no obligation, with a complimentary dinner.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/contact" className="btn-primary">Reserve My Seat</Link>
-          <a href="tel:5058961348" className="btn-secondary">(505) 896-1348</a>
+      <section className="section-border py-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="section-title">Join our next free seminar.</h2>
+          <p className="text-body-lg body-text mt-3 max-w-md mx-auto">
+            Learn the fundamentals of retirement planning and protecting your
+            financial future — at no cost, no obligation, with a complimentary dinner.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/contact" className="btn-primary">Reserve My Seat</Link>
+            <a href="tel:5058961348" className="btn-secondary">(505) 896-1348</a>
+          </div>
         </div>
       </section>
     </div>

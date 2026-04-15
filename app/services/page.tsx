@@ -80,43 +80,36 @@ const process = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-white">
+    <div>
       {/* ── Hero ── */}
-      <section className="pt-32 pb-20 px-6 max-w-3xl mx-auto text-center">
-        <p className="text-nav fv-nav text-secondary uppercase tracking-widest mb-4">
-          What We Do
-        </p>
-        <h1 className="text-hero fv-body-bold font-bold text-black leading-tight">
-          Every service grounded in safety.
-        </h1>
-        <p className="text-body-lg fv-body text-secondary mt-6 max-w-xl mx-auto leading-snug">
-          From retirement income to life protection — everything we offer is built
-          around safety, reasonable growth, and simplicity.
-        </p>
+      <section className="page-hero pt-44 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="section-label text-[rgba(255,255,255,0.7)] mb-4">What We Do</p>
+          <h1 className="hero-title text-white leading-tight">Every service grounded in safety.</h1>
+          <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl mx-auto leading-snug">
+            From retirement income to life protection — everything we offer is built
+            around safety, reasonable growth, and simplicity.
+          </p>
+        </div>
       </section>
 
       {/* ── Services grid ── */}
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            Comprehensive financial planning.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
-            We cover every dimension of your financial future.
-          </p>
-          <div className="grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
+          <p className="section-label mb-3">Our Services</p>
+          <h2 className="section-title mb-2">Comprehensive financial planning.</h2>
+          <p className="text-body-lg body-text mb-12">We cover every dimension of your financial future.</p>
+          <div className="grid md:grid-cols-2 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {services.map(({ title, description, href }) => (
               <Link
                 key={title}
                 href={href}
-                className="bg-white p-8 flex flex-col gap-4 hover:bg-muted transition-colors duration-150 group"
+                className="bg-bg p-8 flex flex-col gap-4 hover:bg-bg2 transition-colors duration-150 group"
               >
-                <h3 className="text-card-h fv-body-semi font-semibold text-black group-hover:underline underline-offset-2">
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink group-hover:underline underline-offset-2">
                   {title} →
                 </h3>
-                <p className="text-body fv-body text-secondary leading-snug">
-                  {description}
-                </p>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </Link>
             ))}
           </div>
@@ -124,20 +117,19 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Three principles ── */}
-      <section className="section-border py-20">
+      <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            Three principles behind every recommendation.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
-            Not just talking points — the framework we apply to every client's situation.
+          <p className="section-label mb-3">Our Philosophy</p>
+          <h2 className="section-title mb-2">Three principles behind every recommendation.</h2>
+          <p className="text-body-lg body-text mb-12">
+            Not just talking points — the framework we apply to every client&rsquo;s situation.
           </p>
-          <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {principles.map(({ number, title, description }) => (
-              <div key={number} className="bg-white p-8 flex flex-col gap-4">
-                <span className="text-nav fv-nav text-secondary">{number}</span>
-                <h3 className="text-card-h fv-body-semi font-semibold text-black">{title}</h3>
-                <p className="text-body fv-body text-secondary leading-snug">{description}</p>
+              <div key={number} className="bg-bg p-8 flex flex-col gap-4">
+                <span className="text-nav fv-nav text-accent">{number}</span>
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink">{title}</h3>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </div>
             ))}
           </div>
@@ -147,19 +139,18 @@ export default function ServicesPage() {
       {/* ── Process ── */}
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            From first call to confident retirement.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
+          <p className="section-label mb-3">How It Works</p>
+          <h2 className="section-title mb-2">From first call to confident retirement.</h2>
+          <p className="text-body-lg body-text mb-12">
             A transparent, four-step process focused entirely on your goals.
           </p>
-          <div className="grid md:grid-cols-2 gap-px bg-border">
+          <div className="grid md:grid-cols-2 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {process.map(({ step, title, body }) => (
-              <div key={step} className="bg-white p-8 flex gap-6">
-                <span className="text-nav fv-nav text-secondary shrink-0 mt-0.5">{step}</span>
+              <div key={step} className="bg-bg p-8 flex gap-6">
+                <span className="text-nav fv-nav text-accent shrink-0 mt-0.5">{step}</span>
                 <div>
-                  <h3 className="text-card-h fv-body-semi font-semibold text-black mb-2">{title}</h3>
-                  <p className="text-body fv-body text-secondary leading-snug">{body}</p>
+                  <h3 className="text-card-h fv-body-semi font-semibold text-ink mb-2">{title}</h3>
+                  <p className="text-body fv-body body-text leading-snug">{body}</p>
                 </div>
               </div>
             ))}
@@ -168,17 +159,17 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section-border py-20 px-6 text-center">
-        <h2 className="text-section fv-body-bold font-bold text-black">
-          Not sure where to start?
-        </h2>
-        <p className="text-body-lg fv-body text-secondary mt-3 max-w-sm mx-auto">
-          Attend a free seminar or call us directly — we'll point you in the
-          right direction at no charge.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/seminars" className="btn-primary">See Free Seminars</Link>
-          <Link href="/contact" className="btn-secondary">Contact Us</Link>
+      <section className="section-border py-20 px-6 bg-bg2">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="section-title">Not sure where to start?</h2>
+          <p className="text-body-lg body-text mt-3 max-w-sm mx-auto">
+            Attend a free seminar or call us directly — we'll point you in the
+            right direction at no charge.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/seminars" className="btn-primary">See Free Seminars</Link>
+            <Link href="/contact" className="btn-secondary">Contact Us</Link>
+          </div>
         </div>
       </section>
     </div>

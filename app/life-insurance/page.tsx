@@ -44,7 +44,7 @@ const insuranceTypes = [
       "A flexible permanent policy that links cash value growth to a market index — similar to fixed index annuities. Growth potential with downside protection.",
     features: [
       "Flexible premium payments",
-      "Market-linked cash value growth with floor protection",
+      "Market-linked cash value growth with floor",
       "Tax-advantaged access to cash value in retirement",
       "Death benefit can be adjusted as needs change",
     ],
@@ -70,7 +70,7 @@ const useCases = [
   {
     title: "Income replacement",
     description:
-      "If your family depends on your income, life insurance replaces that income — paying for housing, education, and daily life expenses if you're no longer there.",
+      "If your family depends on your income, life insurance replaces that income — paying for housing, education, and daily expenses if you're no longer there.",
   },
   {
     title: "Debt protection",
@@ -91,24 +91,24 @@ const useCases = [
 
 export default function LifeInsurancePage() {
   return (
-    <div className="bg-white">
+    <div>
       {/* ── Hero ── */}
-      <section className="pt-32 pb-20 px-6 max-w-3xl mx-auto text-center">
-        <p className="text-nav fv-nav text-secondary uppercase tracking-widest mb-4">
-          Life Insurance
-        </p>
-        <h1 className="text-hero fv-body-bold font-bold text-black leading-tight">
-          Protection that
-          <br />
-          outlasts you.
-        </h1>
-        <p className="text-body-lg fv-body text-secondary mt-6 max-w-xl mx-auto leading-snug">
-          Comprehensive coverage options tailored to protect your beneficiaries
-          and preserve the financial legacy you&rsquo;ve worked to build.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/contact" className="btn-primary">Find the Right Coverage</Link>
-          <Link href="/seminars" className="btn-secondary">Attend a Free Seminar</Link>
+      <section className="page-hero pt-44 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="section-label text-[rgba(255,255,255,0.7)] mb-4">Life Insurance</p>
+          <h1 className="hero-title text-white leading-tight">
+            Protection that
+            <br />
+            outlasts you.
+          </h1>
+          <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl mx-auto leading-snug">
+            Comprehensive coverage options tailored to protect your beneficiaries
+            and preserve the financial legacy you&rsquo;ve worked to build.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/contact" className="btn-white">Find the Right Coverage</Link>
+            <Link href="/seminars" className="btn-hero-outline">Attend a Free Seminar</Link>
+          </div>
         </div>
       </section>
 
@@ -116,36 +116,31 @@ export default function LifeInsurancePage() {
       <section className="section-border py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 className="text-section fv-body-bold font-bold text-black mb-6">
-              More than a death benefit.
-            </h2>
+            <p className="section-label mb-3">More Than a Death Benefit</p>
+            <h2 className="section-title mb-6">Protection that works in all directions.</h2>
             <div className="space-y-5">
-              <p className="text-body fv-body text-secondary leading-snug">
+              <p className="text-body fv-body body-text leading-snug">
                 Life insurance is one of the most direct ways to ensure that the
                 people who depend on you — your spouse, your children, your
                 business partner — are protected if something unexpected happens.
               </p>
-              <p className="text-body fv-body text-secondary leading-snug">
+              <p className="text-body fv-body body-text leading-snug">
                 Modern policies can also serve as tax-advantaged savings vehicles,
                 supplement retirement income, and protect against the financial
                 devastation of chronic illness or long-term care needs.
               </p>
-              <p className="text-body fv-body text-secondary leading-snug">
+              <p className="text-body fv-body body-text leading-snug">
                 At IIP, we help you identify the right type and amount of coverage
                 — and make sure it fits cleanly into your broader retirement and
                 financial plan.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-px bg-border rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 gap-px bg-[var(--border)] rounded-2xl overflow-hidden">
             {useCases.map(({ title, description }) => (
-              <div key={title} className="bg-white p-6">
-                <h3 className="text-card-h fv-body-semi font-semibold text-black mb-1">
-                  {title}
-                </h3>
-                <p className="text-body fv-body text-secondary leading-snug">
-                  {description}
-                </p>
+              <div key={title} className="bg-bg p-6">
+                <h3 className="text-card-h fv-body-semi font-semibold text-ink mb-1">{title}</h3>
+                <p className="text-body fv-body body-text leading-snug">{description}</p>
               </div>
             ))}
           </div>
@@ -153,12 +148,11 @@ export default function LifeInsurancePage() {
       </section>
 
       {/* ── Product types ── */}
-      <section className="section-border py-20">
+      <section className="section-border py-20 bg-bg2">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-section fv-body-bold font-bold text-black mb-2">
-            Types of life insurance we offer.
-          </h2>
-          <p className="text-body-lg fv-body text-secondary mb-12">
+          <p className="section-label mb-3">Coverage Options</p>
+          <h2 className="section-title mb-2">Types of life insurance we offer.</h2>
+          <p className="text-body-lg body-text mb-12">
             Each type serves a different purpose. We&rsquo;ll help you choose the
             right one — or a combination — based on your goals.
           </p>
@@ -166,24 +160,18 @@ export default function LifeInsurancePage() {
             {insuranceTypes.map(({ tag, title, subtitle, description, features, featured }) => (
               <div
                 key={title}
-                className={`card p-8 flex flex-col gap-5 ${featured ? "ring-1 ring-black" : ""}`}
+                className={`iip-card p-8 flex flex-col gap-5 ${featured ? "ring-2 ring-[var(--accent)]" : ""}`}
               >
-                <span className="fv-nav text-nav self-start px-3 py-1 rounded-full bg-muted text-secondary">
-                  {tag}
-                </span>
+                <span className="chip self-start">{tag}</span>
                 <div>
-                  <h3 className="text-card-h fv-body-semi font-semibold text-black">
-                    {title}
-                  </h3>
-                  <p className="text-nav fv-nav mt-1 text-secondary">{subtitle}</p>
+                  <h3 className="text-card-h fv-body-semi font-semibold text-ink">{title}</h3>
+                  <p className="text-nav fv-nav text-ink3 mt-1">{subtitle}</p>
                 </div>
-                <p className="text-body fv-body text-secondary leading-snug flex-1">
-                  {description}
-                </p>
+                <p className="text-body fv-body body-text leading-snug flex-1">{description}</p>
                 <ul className="space-y-1.5">
                   {features.map((f) => (
-                    <li key={f} className="fv-nav flex items-center gap-2 text-nav text-black">
-                      <span className="text-secondary">—</span> {f}
+                    <li key={f} className="flex items-center gap-2 text-nav text-ink">
+                      <span className="text-accent">✓</span> {f}
                     </li>
                   ))}
                 </ul>
@@ -194,17 +182,17 @@ export default function LifeInsurancePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section-border py-20 px-6 text-center">
-        <h2 className="text-section fv-body-bold font-bold text-black">
-          Let&rsquo;s find the right coverage.
-        </h2>
-        <p className="text-body-lg fv-body text-secondary mt-3 max-w-sm mx-auto">
-          We compare policies across top-rated carriers to match you with the
-          right coverage at the right price.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3 justify-center">
-          <Link href="/contact" className="btn-primary">Schedule a Consultation</Link>
-          <Link href="/retirement-planning" className="btn-secondary">Retirement Planning</Link>
+      <section className="section-border py-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="section-title">Let&rsquo;s find the right coverage.</h2>
+          <p className="text-body-lg body-text mt-3 max-w-sm mx-auto">
+            We compare policies across top-rated carriers to match you with the
+            right coverage at the right price.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link href="/contact" className="btn-primary">Schedule a Consultation</Link>
+            <Link href="/retirement-planning" className="btn-secondary">Retirement Planning</Link>
+          </div>
         </div>
       </section>
     </div>

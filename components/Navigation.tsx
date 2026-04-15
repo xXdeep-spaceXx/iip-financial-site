@@ -18,30 +18,29 @@ const navLinks = [
 ];
 
 const mobileLinks = [
-  { label: "About",              href: "/about" },
-  { label: "Services",           href: "/services" },
-  { label: "Retirement Planning",href: "/retirement-planning" },
-  { label: "Annuities",          href: "/annuity" },
-  { label: "Life Insurance",     href: "/life-insurance" },
-  { label: "Seminars",           href: "/seminars" },
-  { label: "Client Appreciation",href: "/appreciation" },
-  { label: "Contact",            href: "/contact" },
+  { label: "About",               href: "/about" },
+  { label: "Services",            href: "/services" },
+  { label: "Retirement Planning", href: "/retirement-planning" },
+  { label: "Annuities",           href: "/annuity" },
+  { label: "Life Insurance",      href: "/life-insurance" },
+  { label: "Seminars",            href: "/seminars" },
+  { label: "Client Appreciation", href: "/appreciation" },
+  { label: "Contact",             href: "/contact" },
 ];
 
 export default function Navigation() {
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
-  const [dropOpen, setDropOpen]   = useState(false);
-  const dropRef                   = useRef<HTMLLIElement>(null);
-  const pathname                  = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [dropOpen, setDropOpen] = useState(false);
+  const dropRef                  = useRef<HTMLLIElement>(null);
+  const pathname                 = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close dropdown on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
@@ -52,17 +51,22 @@ export default function Navigation() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setDropOpen(false);
+  }, [pathname]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+          ? "top-0 bg-white/95 backdrop-blur-md shadow-md border-b border-[var(--border)]"
+          : "top-9 bg-[var(--bg)]/90 backdrop-blur-sm"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-nav fv-nav-semi font-semibold text-black tracking-tight">
+        <Link href="/" className="nav-logo">
           Innovative Investment Professionals
         </Link>
 
@@ -74,7 +78,7 @@ export default function Navigation() {
                 <button
                   type="button"
                   onClick={() => setDropOpen((o) => !o)}
-                  className={`text-nav fv-nav transition-colors duration-150 flex items-center gap-1 ${
+                  className={`nav-link flex items-center gap-1 ${
                     pathname.startsWith("/services") ||
                     children.some((c) => pathname === c.href)
                       ? "nav-link-active"
@@ -86,26 +90,33 @@ export default function Navigation() {
                     width="10" height="6" viewBox="0 0 10 6" fill="none"
                     className={`transition-transform duration-150 ${dropOpen ? "rotate-180" : ""}`}
                   >
-                    <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M1 1l4 4 4-4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
+
                 {dropOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-52 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                  <div className="nav-dropdown-panel absolute top-full left-0 mt-2 w-56 py-2 z-50">
                     <Link
                       href={href}
                       onClick={() => setDropOpen(false)}
-                      className="block px-4 py-2.5 text-nav fv-nav text-secondary hover:text-black hover:bg-muted transition-colors duration-100"
+                      className="nav-dropdown-item"
                     >
                       All Services
                     </Link>
-                    <div className="h-px bg-border mx-4 my-1" />
+                    <div className="h-px bg-[var(--border)] mx-4 my-1" />
                     {children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
                         onClick={() => setDropOpen(false)}
-                        className={`block px-4 py-2.5 text-nav fv-nav hover:bg-muted transition-colors duration-100 ${
-                          pathname === child.href ? "text-black" : "text-secondary hover:text-black"
+                        className={`nav-dropdown-item ${
+                          pathname === child.href ? "nav-link-active" : ""
                         }`}
                       >
                         {child.label}
@@ -118,7 +129,7 @@ export default function Navigation() {
               <li key={label}>
                 <Link
                   href={href}
-                  className={`text-nav fv-nav transition-colors duration-150 ${
+                  className={`nav-link ${
                     pathname === href ? "nav-link-active" : "nav-link-inactive"
                   }`}
                 >
@@ -131,33 +142,35 @@ export default function Navigation() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/appreciation" className="btn-secondary">Client Events</Link>
-          <a href="tel:5058961348" className="btn-primary">(505) 896-1348</a>
+          <Link href="/appreciation" className="btn-secondary">
+            Client Events
+          </Link>
+          <a href="tel:5058961348" className="btn-primary">
+            (505) 896-1348
+          </a>
         </div>
 
         {/* Hamburger */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 flex flex-col gap-1.5"
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <div className="space-y-1.5">
-            <span className={`block w-5 h-px bg-black transition-all duration-200 origin-center ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-5 h-px bg-black transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-px bg-black transition-all duration-200 origin-center ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-          </div>
+          <span className={`nav-hamburger-line ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+          <span className={`nav-hamburger-line ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`nav-hamburger-line ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
         </button>
       </nav>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-5 flex flex-col gap-1">
+        <div className="nav-mobile-menu md:hidden px-6 py-5 flex flex-col gap-0">
           {mobileLinks.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
-              className={`text-nav fv-nav py-2.5 border-b border-border last:border-0 ${
+              className={`nav-mobile-link ${
                 pathname === href ? "nav-link-active" : "nav-link-inactive"
               }`}
               onClick={() => setMenuOpen(false)}
