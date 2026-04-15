@@ -35,7 +35,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(123,45,139,0.12);
 }
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-atom { width: 34px; height: 34px; flex-shrink: 0; }
+.nav-logo-img { height: 38px; width: auto; flex-shrink: 0; filter: brightness(0); }
 .nav-wordmark { display: flex; flex-direction: column; }
 .nav-word-top { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--accent-l); text-transform: uppercase; line-height: 1; }
 .nav-word-bot { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2.5px; color: var(--text-2); text-transform: uppercase; line-height: 1.4; }
@@ -276,12 +276,7 @@ footer { background: var(--bg3); border-top: 1px solid var(--border); padding: 4
 </div>
 <nav id="navbar">
   <a href="iip.html" class="nav-brand">
-    <svg class="nav-atom" viewBox="0 0 34 34" fill="none">
-      <ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(176,102,194,0.7)" stroke-width="1.2"/>
-      <g transform="rotate(60,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(176,102,194,0.7)" stroke-width="1.2"/></g>
-      <g transform="rotate(120,17,17)"><ellipse cx="17" cy="17" rx="13" ry="4.5" fill="none" stroke="rgba(176,102,194,0.7)" stroke-width="1.2"/></g>
-      <circle cx="17" cy="17" r="3" fill="#b066c2"/>
-    </svg>
+    <img src="assets/innovative-logo-w.webp" class="nav-logo-img" alt="Innovative Investment Professionals">
     <div class="nav-wordmark">
       <span class="nav-word-top">Innovative</span>
       <span class="nav-word-bot">Investment Professionals</span>
