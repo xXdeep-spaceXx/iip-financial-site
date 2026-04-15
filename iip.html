@@ -610,6 +610,79 @@ body {
 }
 .stat-label { font-size: 13px; color: var(--text-3); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
 
+/* ── FAQ ── */
+#faq { background: var(--bg); position: relative; z-index: 1; }
+.faq-wrap { max-width: 720px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; cursor: pointer; }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 16px; letter-spacing: -0.02em; font-optical-sizing: auto; }
+.faq-q::after { content: '+'; font-size: 22px; color: var(--accent-l); flex-shrink: 0; transition: transform 0.3s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { font-size: 14px; color: var(--text-2); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+.faq-item.open .faq-a { max-height: 300px; padding-top: 12px; }
+
+/* ── How It Works ── */
+#how-it-works { background: var(--bg2); position: relative; z-index: 1; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px; position: relative;
+}
+.process-steps::before {
+  content: ''; position: absolute; top: 43px; left: calc(16.5% + 22px); right: calc(16.5% + 22px);
+  height: 1px; background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent);
+  pointer-events: none;
+}
+.process-step-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 36px 28px; text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.process-step-card:hover { border-color: var(--border-h); transform: translateY(-3px); }
+.process-step-num {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: white;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; font-optical-sizing: auto;
+  box-shadow: 0 4px 20px rgba(123,45,139,0.3);
+}
+.process-step-card h3 {
+  font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; font-optical-sizing: auto;
+  letter-spacing: -0.02em; color: var(--text); margin-bottom: 10px;
+}
+.process-step-card p { font-size: 14px; color: var(--text-2); line-height: 1.75; }
+@media(max-width:640px) {
+  .process-steps { grid-template-columns: 1fr; gap: 20px; }
+  .process-steps::before { display: none; }
+}
+
+/* ── Reviews ── */
+#reviews { background: var(--bg); position: relative; z-index: 1; }
+.reviews-grid { display: flex; flex-direction: column; gap: 28px; max-width: 780px; margin: 0 auto; }
+.review-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 36px 40px; position: relative;
+  opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.review-card.from-right { transform: translateX(60px); }
+.review-card.from-left  { transform: translateX(-60px); }
+.review-card.visible    { opacity: 1; transform: translateX(0); }
+.review-stars { color: var(--accent-l); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+.review-quote {
+  font-family: 'Fraunces', serif; font-style: italic; font-optical-sizing: auto;
+  font-size: clamp(15px, 2vw, 17px); color: var(--text); line-height: 1.75; margin-bottom: 20px;
+}
+.review-author { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.review-location { font-size: 12px; color: var(--text-3); font-weight: 400; margin-left: 4px; }
+.review-google-badge {
+  position: absolute; top: 28px; right: 32px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-3); opacity: 0.6;
+}
+@media(max-width:640px) {
+  .review-card { padding: 24px; }
+  .review-google-badge { display: none; }
+  .review-card.from-right, .review-card.from-left { transform: translateX(0); opacity: 0; }
+}
+
 /* ── CTA ── */
 #seminars { background: var(--bg); position: relative; z-index: 1; }
 .cta-card {
@@ -677,6 +750,32 @@ footer {
   .hero-title { font-size: clamp(32px, 9vw, 48px); }
   #globe-bg { display: none; }
 }
+/* ── Trust Badges Band ── */
+#trust-badges {
+  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  position: relative; z-index: 1;
+}
+.trust-badges-inner {
+  max-width: 860px; margin: 0 auto; padding: 24px 40px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-badge-item {
+  display: flex; align-items: center; gap: 14px; text-decoration: none;
+  color: var(--text-3); transition: color 0.25s, filter 0.25s;
+  filter: grayscale(1) opacity(0.55);
+}
+.trust-badge-item:hover { color: var(--accent); filter: grayscale(0) opacity(1); }
+.trust-badge-icon { width: 44px; height: 44px; flex-shrink: 0; }
+.trust-badge-text { display: flex; flex-direction: column; gap: 1px; }
+.trust-badge-label { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.2; }
+.trust-badge-sub { font-size: 11px; font-weight: 500; color: var(--text-3); letter-spacing: 0.3px; }
+.trust-badge-divider { width: 1px; height: 36px; background: var(--border); flex-shrink: 0; }
+@media(max-width:640px) {
+  .trust-badges-inner { gap: 24px; padding: 20px 24px; }
+  .trust-badge-divider { display: none; }
+}
+
 /* ── Hero Trust Row ── */
 .hero-trust {
   display: flex; gap: 10px; align-items: center; justify-content: center;
@@ -816,6 +915,47 @@ footer {
   <div class="scroll-hint">
     <span>Scroll to explore</span>
     <div class="scroll-hint-arrow"></div>
+  </div>
+</section>
+
+<!-- ── Trust Badges ── -->
+<section id="trust-badges">
+  <div class="trust-badges-inner">
+    <a href="https://www.bbb.org/us/nm/rio-rancho/profile/financial-planning-consultants/innovative-investment-professionals-0806-99133210" target="_blank" rel="noopener" class="trust-badge-item">
+      <svg class="trust-badge-icon" viewBox="0 0 48 48" fill="none" aria-label="BBB A+ Accredited">
+        <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.08"/>
+        <text x="24" y="19" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="currentColor">BBB</text>
+        <text x="24" y="32" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="900" fill="currentColor">A+</text>
+      </svg>
+      <div class="trust-badge-text">
+        <span class="trust-badge-label">BBB Accredited</span>
+        <span class="trust-badge-sub">Since 2012</span>
+      </div>
+    </a>
+    <div class="trust-badge-divider"></div>
+    <a href="https://www.expertise.com/insurance/life-insurance/new-mexico/rio-rancho" target="_blank" rel="noopener" class="trust-badge-item">
+      <svg class="trust-badge-icon" viewBox="0 0 48 48" fill="none" aria-label="Expertise.com">
+        <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.08"/>
+        <text x="24" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="currentColor">TOP</text>
+        <text x="24" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="600" fill="currentColor">RATED</text>
+      </svg>
+      <div class="trust-badge-text">
+        <span class="trust-badge-label">Expertise.com</span>
+        <span class="trust-badge-sub">Best in Rio Rancho</span>
+      </div>
+    </a>
+    <div class="trust-badge-divider"></div>
+    <a href="https://brokercheck.finra.org/firm/summary/4123912" target="_blank" rel="noopener" class="trust-badge-item">
+      <svg class="trust-badge-icon" viewBox="0 0 48 48" fill="none" aria-label="FINRA BrokerCheck">
+        <rect width="48" height="48" rx="8" fill="currentColor" opacity="0.08"/>
+        <text x="24" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="700" fill="currentColor">FINRA</text>
+        <text x="24" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="600" fill="currentColor">VERIFIED</text>
+      </svg>
+      <div class="trust-badge-text">
+        <span class="trust-badge-label">FINRA Registered</span>
+        <span class="trust-badge-sub">License #4123912</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -965,6 +1105,95 @@ footer {
   </div>
 </section>
 
+<!-- ── Reviews ── -->
+<section id="reviews">
+  <div class="section-wrap">
+    <div class="section-label">What Our Clients Say</div>
+    <h2 class="section-title reveal">Real Stories, <span>Real Families</span></h2>
+    <p class="section-sub reveal reveal-delay-1">Over 30 years serving New Mexico. Here's what some of our clients have shared.</p>
+    <div class="reviews-grid">
+
+      <div class="review-card from-right" data-review-idx="0">
+        <div class="review-google-badge">★ Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"We had a couple financial consultants before finding Innovative Investment Professionals. Chris Rael is a true fiduciary! He and his team have provided great advice and support to us for over 10 years! Highly recommend them!"</p>
+        <div class="review-author">Tom Plummer <span class="review-location">— Albuquerque, NM</span></div>
+      </div>
+
+      <div class="review-card from-left" data-review-idx="1">
+        <div class="review-google-badge">★ Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Chris Rael and his staff are professional, thorough and very accommodating. We have been in business with Innovative for years now and they have treated us like part of their family while going above and beyond in helping us."</p>
+        <div class="review-author">Richard Valdez <span class="review-location">— Rio Rancho, NM</span></div>
+      </div>
+
+      <div class="review-card from-right" data-review-idx="2">
+        <div class="review-google-badge">★ Google Review</div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote">"Innovative Investment Professionals are great. They have helped us through setting up valuable programs for retirement. Thanks!"</p>
+        <div class="review-author">Carol Bellows <span class="review-location">— New Mexico</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ── -->
+<section id="how-it-works">
+  <div class="section-wrap">
+    <div class="section-label">Getting Started</div>
+    <h2 class="section-title reveal">How It <span>Works</span></h2>
+    <p class="section-sub reveal reveal-delay-1">Three simple steps to a retirement plan you actually feel good about.</p>
+    <div class="process-steps">
+      <div class="process-step-card reveal">
+        <div class="process-step-num">1</div>
+        <h3>Book a Free Call</h3>
+        <p>A relaxed, no-obligation conversation. Tell us where you're at and what's keeping you up at night — we've heard it all.</p>
+      </div>
+      <div class="process-step-card reveal reveal-delay-1">
+        <div class="process-step-num">2</div>
+        <h3>Build Your Plan</h3>
+        <p>We design a strategy tailored to your goals — not off-the-shelf products. You'll understand every piece of it before we move forward.</p>
+      </div>
+      <div class="process-step-card reveal reveal-delay-2">
+        <div class="process-step-num">3</div>
+        <h3>Retire with Confidence</h3>
+        <p>We stay with you through retirement, not just to it. Ongoing reviews mean your plan evolves as your life does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="section-wrap">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title reveal">Questions We <span>Hear Often</span></h2>
+    <div class="faq-wrap reveal reveal-delay-1">
+      <div class="faq-item">
+        <div class="faq-q">Am I a good fit for IIP?</div>
+        <div class="faq-a">If you're within 10 years of retirement, already retired, or simply want a clearer picture of your financial future — you're exactly who we work with. We serve families across all income levels throughout New Mexico.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you charge fees for a consultation?</div>
+        <div class="faq-a">No. Our initial consultations are always free with no obligation. We believe you should fully understand your options before making any decisions. There's no pressure, ever.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you get paid?</div>
+        <div class="faq-a">We're transparent about this because it matters. We work primarily through insurance and annuity products, which means we may receive compensation from the companies whose products we recommend. We always disclose this, and as fiduciaries, we're required to put your interests first — not ours. Ask us anything about this on your first call.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens at our first meeting?</div>
+        <div class="faq-a">We listen. You tell us where you are, what worries you, and what you're hoping for. We ask questions, and by the end you'll have a clearer picture of your options. No pressure, no sales pitch — just a real conversation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What areas do you serve?</div>
+        <div class="faq-a">We serve families throughout New Mexico with offices in Albuquerque and Rio Rancho. We also work with clients remotely when needed. Call us at (505) 896-1348 to get started.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <section id="seminars">
   <div class="section-wrap">
@@ -988,6 +1217,10 @@ footer {
       <li><a href="#">Disclosures</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
+  </div>
+  <div class="legal">
+    *Backed by the claims paying ability of the carrier. **Our products offer a reasonable rate of return, over time.<br>
+    This site is for informational purposes only and is not intended to be a solicitation for or offering of any product or investment. The offer for sale of an insurance product may only be conducted in a state where the agent is licensed and the product is approved for sale. Securities offered through World Equity Group, Inc., member <strong>FINRA</strong> and <strong>SIPC</strong>, a Registered Investment Adviser. Innovative Investment Professionals is not owned or controlled by World Equity Group, Inc.
   </div>
 </footer>
 
@@ -1209,6 +1442,27 @@ const cObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 countEls.forEach(el => cObs.observe(el));
+
+/* ─── Review cards alternating entrance ─── */
+const reviewCards = document.querySelectorAll('.review-card');
+const reviewObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const idx = parseInt(e.target.dataset.reviewIdx, 10) || 0;
+    setTimeout(() => { e.target.classList.add('visible'); }, idx * 100);
+    reviewObs.unobserve(e.target);
+  });
+}, { threshold: 0.15 });
+reviewCards.forEach(card => reviewObs.observe(card));
+
+/* ─── FAQ accordion ─── */
+document.querySelectorAll('.faq-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
 </script>
 <script>
 // Mobile nav toggle
