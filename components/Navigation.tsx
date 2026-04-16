@@ -67,14 +67,8 @@ export default function Navigation() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="nav-logo-pill">
-          <Image
-            src="/assets/iip-logo.png"
-            alt="Innovative Investment Professionals"
-            width={90}
-            height={38}
-            className="object-contain"
-          />
+        <Link href="/" className="nav-logo">
+          Innovative Investment Professionals
         </Link>
 
         {/* Desktop links */}
