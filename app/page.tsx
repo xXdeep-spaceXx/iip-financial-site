@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import HeroOrb from "@/components/HeroOrb";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollAtom from "@/components/ScrollAtom";
 
 export const metadata: Metadata = {
-  title: "Innovative Investment Professionals | Retirement Planning in Rio Rancho, NM",
+  title: "Retirement Planning in Rio Rancho, NM | IIP",
   description:
     "Retirement planning, annuities, and life insurance for New Mexico families since 1996. Serving Albuquerque and Rio Rancho, NM.",
+  alternates: { canonical: "https://innovativeinvpro.com/" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/",
+    title: "Retirement Planning in Rio Rancho, NM | IIP",
+    description:
+      "Retirement planning, annuities, and life insurance for New Mexico families since 1996. Serving Albuquerque and Rio Rancho, NM.",
+  },
 };
 
 const services = [

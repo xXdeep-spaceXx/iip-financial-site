@@ -3,9 +3,16 @@ import Link from "next/link";
 import HeroOrb from "@/components/HeroOrb";
 
 export const metadata: Metadata = {
-  title: "Free Retirement Seminars | Innovative Investment Professionals",
+  title: "Free Retirement Seminars in Albuquerque | IIP",
   description:
     "Free retirement planning dinners in Albuquerque and Rio Rancho, NM. No cost, no obligation — learn about annuities, taxes, and income for life.",
+  alternates: { canonical: "https://innovativeinvpro.com/seminars" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/seminars",
+    title: "Free Retirement Seminars in Albuquerque | IIP",
+    description:
+      "Free retirement planning dinners in Albuquerque and Rio Rancho, NM. No cost, no obligation — learn about annuities, taxes, and income for life.",
+  },
 };
 
 const expectations = [

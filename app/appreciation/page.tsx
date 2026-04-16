@@ -3,9 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Client Appreciation Events | Innovative Investment Professionals",
+  title: "Client Appreciation Events | IIP",
   description:
     "IIP client appreciation events — Albuquerque Isotopes games at Isotopes Park. Call (505) 896-1348 to reserve your tickets.",
+  alternates: { canonical: "https://innovativeinvpro.com/appreciation" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/appreciation",
+    title: "Client Appreciation Events | IIP",
+    description:
+      "IIP client appreciation events — Albuquerque Isotopes games at Isotopes Park. Call (505) 896-1348 to reserve your tickets.",
+  },
 };
 
 const games = [

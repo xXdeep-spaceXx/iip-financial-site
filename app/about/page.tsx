@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "About Us | Innovative Investment Professionals",
   description:
     "Meet the team at Innovative Investment Professionals — serving New Mexico families with honest, straightforward financial guidance since 1996.",
+  alternates: { canonical: "https://innovativeinvpro.com/about" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/about",
+    title: "About Us | Innovative Investment Professionals",
+    description:
+      "Meet the team at Innovative Investment Professionals — serving New Mexico families with honest, straightforward financial guidance since 1996.",
+  },
 };
 
 const team = [

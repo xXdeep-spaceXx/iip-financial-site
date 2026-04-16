@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Retirement Planning | Innovative Investment Professionals",
   description:
     "Expert retirement planning in Albuquerque and Rio Rancho, NM. 401(k)s, IRAs, Social Security strategy, and income planning since 1996.",
+  alternates: { canonical: "https://innovativeinvpro.com/retirement-planning" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/retirement-planning",
+    title: "Retirement Planning | Innovative Investment Professionals",
+    description:
+      "Expert retirement planning in Albuquerque and Rio Rancho, NM. 401(k)s, IRAs, Social Security strategy, and income planning since 1996.",
+  },
 };
 
 const steps = [

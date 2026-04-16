@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Life Insurance | Innovative Investment Professionals",
   description:
     "Life insurance strategies in Albuquerque and Rio Rancho, NM. Protect your beneficiaries and preserve the financial legacy you've built.",
+  alternates: { canonical: "https://innovativeinvpro.com/life-insurance" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/life-insurance",
+    title: "Life Insurance | Innovative Investment Professionals",
+    description:
+      "Life insurance strategies in Albuquerque and Rio Rancho, NM. Protect your beneficiaries and preserve the financial legacy you've built.",
+  },
 };
 
 const insuranceTypes = [

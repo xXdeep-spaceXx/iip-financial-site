@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Services | Innovative Investment Professionals",
   description:
     "Retirement planning, annuities, life insurance, and educational seminars in Albuquerque and Rio Rancho, NM. Comprehensive financial planning since 1996.",
+  alternates: { canonical: "https://innovativeinvpro.com/services" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/services",
+    title: "Services | Innovative Investment Professionals",
+    description:
+      "Retirement planning, annuities, life insurance, and educational seminars in Albuquerque and Rio Rancho, NM. Comprehensive financial planning since 1996.",
+  },
 };
 
 const services = [

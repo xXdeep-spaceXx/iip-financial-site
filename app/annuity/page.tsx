@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Annuities | Innovative Investment Professionals",
   description:
     "Fixed index annuities and guaranteed income strategies in Albuquerque and Rio Rancho, NM. Predictable cash flow. No market risk.",
+  alternates: { canonical: "https://innovativeinvpro.com/annuity" },
+  openGraph: {
+    url: "https://innovativeinvpro.com/annuity",
+    title: "Annuities | Innovative Investment Professionals",
+    description:
+      "Fixed index annuities and guaranteed income strategies in Albuquerque and Rio Rancho, NM. Predictable cash flow. No market risk.",
+  },
 };
 
 const products = [
