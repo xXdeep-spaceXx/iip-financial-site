@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const services = [
@@ -142,6 +143,21 @@ export default function Navigation() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://brokercheck.finra.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="FINRA BrokerCheck"
+            className="flex items-center"
+          >
+            <Image
+              src="/assets/broker-check-logo.png"
+              alt="FINRA BrokerCheck"
+              width={120}
+              height={32}
+              className="object-contain"
+            />
+          </a>
           <Link href="/appreciation" className="btn-secondary">
             Client Events
           </Link>
@@ -181,6 +197,21 @@ export default function Navigation() {
           <div className="flex flex-col gap-2 pt-4">
             <a href="tel:5058961348" className="btn-primary justify-center">
               Call (505) 896-1348
+            </a>
+            <a
+              href="https://brokercheck.finra.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center py-2"
+              aria-label="FINRA BrokerCheck"
+            >
+              <Image
+                src="/assets/broker-check-logo.png"
+                alt="FINRA BrokerCheck"
+                width={110}
+                height={28}
+                className="object-contain"
+              />
             </a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const columns = [
   {
@@ -71,22 +72,67 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Legal */}
-        <p className="footer-legal mt-6">
-          Securities and investment advisory services offered through licensed professionals. Fixed
-          index annuities are insurance products — not securities — and are not subject to investment
-          risk. Guarantees are backed by the claims-paying ability of the issuing insurance company.
-          This website is for informational purposes only and does not constitute investment, legal,
-          or tax advice.{" "}
+        {/* Legal links */}
+        <div className="flex flex-wrap gap-x-6 gap-y-1 mt-6">
+          <a href="/privacy-policy" className="footer-legal-link">Privacy Policy</a>
+          <a href="/terms" className="footer-legal-link">Terms &amp; Conditions</a>
+          <a href="/sitemap.xml" className="footer-legal-link">Site Map</a>
           <a
-            href="https://brokercheck.finra.org/firm/summary/4123912"
+            href="https://brokercheck.finra.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-legal-link"
+            aria-label="FINRA BrokerCheck"
+            className="footer-legal-link flex items-center gap-1"
           >
-            Check FINRA BrokerCheck →
+            <Image
+              src="/assets/broker-check-logo.png"
+              alt="FINRA BrokerCheck"
+              width={90}
+              height={22}
+              className="object-contain"
+            />
           </a>
-        </p>
+        </div>
+
+        {/* Footnotes */}
+        <div className="footer-legal mt-4 space-y-1">
+          <p>*Backed by the claims paying ability of the carrier.</p>
+          <p>**Our products offer a reasonable rate of return, over time.</p>
+        </div>
+
+        {/* Full legal disclaimer */}
+        <div className="footer-legal mt-4 space-y-3">
+          <p className="font-semibold">IMPORTANT CONSUMER INFORMATION</p>
+          <p>
+            This site is for informational purposes only and is not intended to be a solicitation
+            for or offering of any product or investment. The offer for sale of an insurance product
+            may only be conducted in a state where the agent is licensed and the product is approved
+            for sale. The providing of investment advice relating to securities may only be done by a
+            properly licensed individual operating through a licensed affiliate entity, unless
+            otherwise exempt. Comments about past performance are not to be construed as a guarantee
+            or assurance of future performance. This website may contain concepts that have legal,
+            accounting and tax implications. We do not provide specific legal or tax advice, nor
+            promote, market or recommend any tax plan or arrangement. Consult a tax/legal
+            professional for guidance with your individual situation. No representations are made as
+            to the accuracy or completeness of the information contained herein or any information
+            contained in any link provided herein, nor does a consumer visiting the web site create
+            an agent-client relationship.
+          </p>
+          <p>
+            By contacting Innovative Investment Professionals you may be offered information
+            regarding the purchase of insurance products, including fixed index annuities and life.
+          </p>
+          <p>
+            Securities offered through World Equity Group, Inc., member{" "}
+            <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" className="footer-legal-link">FINRA</a>
+            {" "}and{" "}
+            <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" className="footer-legal-link">SIPC</a>
+            , a Registered Investment Adviser.
+          </p>
+          <p>
+            Innovative Investment Professionals is not owned or controlled by World Equity Group, Inc.
+          </p>
+        </div>
       </div>
     </footer>
   );
