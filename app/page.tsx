@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroOrb from "@/components/HeroOrb";
-import VideoBackground from "@/components/VideoBackground";
 import ScrollReveal from "@/components/ScrollReveal";
+import ScrollAtom from "@/components/ScrollAtom";
 
 export const metadata: Metadata = {
   title: "Innovative Investment Professionals | Retirement Planning in Rio Rancho, NM",
@@ -76,22 +76,13 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <VideoBackground
-        videoSrc="/assets/AZ2IlK1xquln6jN3FHuRzA-AZ2IlK1xHsl1dw-Q9PrzJQ.mp4"
-        fallbackSrc="/assets/retirement-walk.jpg"
-        fallbackAlt="Couple walking on beach at retirement"
-        overlayOpacity={0}
-        className="min-h-[88vh] flex items-center"
-      >
-        {/* Purple gradient on top of video */}
-        <div className="video-hero-overlay" />
-
+      <section className="page-hero relative min-h-[88vh] flex items-center px-6">
         {/* Rotating sphere */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
           <HeroOrb className="w-full h-full" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-24">
+        <div className="relative max-w-7xl mx-auto w-full pt-28 pb-24">
           <div className="max-w-2xl">
             <p className="section-label text-[rgba(255,255,255,0.7)] mb-5 animate-hero">
               Rio Rancho &amp; Albuquerque, NM · Since 1996
@@ -116,7 +107,10 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-      </VideoBackground>
+      </section>
+
+      {/* ── Scroll-driven atom animation ── */}
+      <ScrollAtom />
 
       {/* ── Stats ── */}
       <ScrollReveal>
