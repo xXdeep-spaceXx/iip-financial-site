@@ -335,6 +335,17 @@
     background-color: rgba(249, 247, 242, 0.90);
   }
 
+  /* Logo image pill — same purple as btn-primary */
+  .nav-logo-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background: var(--accent);
+    transition: background 0.15s;
+  }
+  .nav-logo-pill:hover { background: var(--accent-l); }
+
   .nav-logo {
     color: var(--accent);
     font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
