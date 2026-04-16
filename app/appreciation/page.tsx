@@ -73,10 +73,10 @@ export default function AppreciationPage() {
               <div key={date} className="bg-bg p-8 flex flex-col gap-4">
                 <div className="flex items-center gap-2">
                   <Image
-                    src="/assets/isotopes-ball.png"
+                    src="/assets/isotopeslogo.png"
                     alt="Albuquerque Isotopes"
-                    width={40}
-                    height={40}
+                    width={140}
+                    height={140}
                     className="object-contain"
                   />
                   <span className="chip">{status}</span>
