@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HeroOrb from "@/components/HeroOrb";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollAtom from "@/components/ScrollAtom";
@@ -76,7 +77,19 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="page-hero relative min-h-[88vh] flex items-center px-6">
+      <section className="relative min-h-[88vh] flex items-center px-6 overflow-hidden">
+        {/* Background photo */}
+        <Image
+          src="/assets/Grandparents-granddaughter-walking-on-beach-winter-retirement.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          aria-hidden="true"
+        />
+        {/* Purple overlay */}
+        <div className="absolute inset-0 hero-photo-overlay" aria-hidden="true" />
+
         {/* Rotating sphere */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
           <HeroOrb className="w-full h-full" />
