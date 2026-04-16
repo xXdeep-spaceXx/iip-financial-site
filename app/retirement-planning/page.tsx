@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroOrb from "@/components/HeroOrb";
-import VideoBackground from "@/components/VideoBackground";
 
 export const metadata: Metadata = {
   title: "Retirement Planning | Innovative Investment Professionals",
@@ -73,18 +72,11 @@ export default function RetirementPlanningPage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <VideoBackground
-        videoSrc="/assets/AZ2IlK1xquln6jN3FHuRzA-AZ2IlK1xHsl1dw-Q9PrzJQ.mp4"
-        fallbackSrc="/assets/retirement-beach.jpg"
-        fallbackAlt="Couple walking on a retirement beach"
-        overlayOpacity={0}
-        className="min-h-[82vh] flex items-center"
-      >
-        <div className="video-hero-overlay" />
+      <section className="page-hero relative min-h-[82vh] flex items-center px-6">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
           <HeroOrb className="w-full h-full" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20">
+        <div className="relative max-w-7xl mx-auto w-full pt-28 pb-20">
           <div className="max-w-2xl">
             <p className="section-label text-[rgba(255,255,255,0.7)] mb-5 animate-hero">Retirement Planning</p>
             <h1 className="hero-title text-white mb-2 animate-hero-delay-1">Build a retirement</h1>
@@ -100,7 +92,7 @@ export default function RetirementPlanningPage() {
             </div>
           </div>
         </div>
-      </VideoBackground>
+      </section>
 
       {/* ── Process ── */}
       <section className="section-border py-20">

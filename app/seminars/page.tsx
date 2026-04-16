@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HeroOrb from "@/components/HeroOrb";
 
 export const metadata: Metadata = {
   title: "Free Retirement Seminars | Innovative Investment Professionals",
@@ -40,21 +41,26 @@ export default function SeminarsPage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="page-hero pt-44 pb-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="section-label text-[rgba(255,255,255,0.7)] mb-4">Free Seminars</p>
-          <h1 className="hero-title text-white leading-tight">
-            An evening of honest
-            <br />
-            financial education.
-          </h1>
-          <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl mx-auto leading-snug">
-            No products pushed, no pressure applied. Just the information you need
-            to plan a confident retirement — over a complimentary dinner.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link href="/contact" className="btn-white">Reserve Your Seat</Link>
-            <a href="tel:5058961348" className="btn-hero-outline">(505) 896-1348</a>
+      <section className="page-hero relative min-h-[70vh] flex items-center px-6">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[420px] h-[420px] hidden lg:block pointer-events-none">
+          <HeroOrb className="w-full h-full" />
+        </div>
+        <div className="relative max-w-7xl mx-auto w-full pt-28 pb-20">
+          <div className="max-w-2xl">
+            <p className="section-label text-[rgba(255,255,255,0.7)] mb-4 animate-hero">Free Seminars</p>
+            <h1 className="hero-title text-white leading-tight animate-hero-delay-1">
+              An evening of honest
+              <br />
+              financial education.
+            </h1>
+            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug animate-hero-delay-2">
+              No products pushed, no pressure applied. Just the information you need
+              to plan a confident retirement — over a complimentary dinner.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 animate-hero-delay-3">
+              <Link href="/contact" className="btn-white">Reserve Your Seat</Link>
+              <a href="tel:5058961348" className="btn-hero-outline">(505) 896-1348</a>
+            </div>
           </div>
         </div>
       </section>

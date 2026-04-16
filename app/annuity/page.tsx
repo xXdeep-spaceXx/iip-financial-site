@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import HeroOrb from "@/components/HeroOrb";
 
 export const metadata: Metadata = {
   title: "Annuities | Innovative Investment Professionals",
@@ -98,17 +99,22 @@ export default function AnnuityPage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="page-hero pt-44 pb-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="section-label text-[rgba(255,255,255,0.7)] mb-4">Annuities</p>
-          <h1 className="hero-title text-white leading-tight">Income you cannot outlive.</h1>
-          <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl mx-auto leading-snug">
-            Guaranteed, predictable cash flow backed by A-rated carriers. Principal
-            protection with zero market risk — certainty in an uncertain world.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link href="/contact" className="btn-white">Get a Quote</Link>
-            <Link href="/seminars" className="btn-hero-outline">Attend a Free Seminar</Link>
+      <section className="page-hero relative min-h-[70vh] flex items-center px-6">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[420px] h-[420px] hidden lg:block pointer-events-none">
+          <HeroOrb className="w-full h-full" />
+        </div>
+        <div className="relative max-w-7xl mx-auto w-full pt-28 pb-20">
+          <div className="max-w-2xl">
+            <p className="section-label text-[rgba(255,255,255,0.7)] mb-4 animate-hero">Annuities</p>
+            <h1 className="hero-title text-white leading-tight animate-hero-delay-1">Income you cannot outlive.</h1>
+            <p className="text-body-lg text-[rgba(255,255,255,0.75)] mt-6 max-w-xl leading-snug animate-hero-delay-2">
+              Guaranteed, predictable cash flow backed by A-rated carriers. Principal
+              protection with zero market risk — certainty in an uncertain world.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 animate-hero-delay-3">
+              <Link href="/contact" className="btn-white">Get a Quote</Link>
+              <Link href="/seminars" className="btn-hero-outline">Attend a Free Seminar</Link>
+            </div>
           </div>
         </div>
       </section>
