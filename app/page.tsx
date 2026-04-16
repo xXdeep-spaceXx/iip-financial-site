@@ -90,12 +90,7 @@ export default function HomePage() {
         {/* Purple overlay */}
         <div className="absolute inset-0 hero-photo-overlay" aria-hidden="true" />
 
-        {/* Rotating sphere */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[460px] h-[460px] hidden lg:block pointer-events-none">
-          <HeroOrb className="w-full h-full" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto w-full pt-28 pb-24">
+<div className="relative max-w-7xl mx-auto w-full pt-28 pb-24">
           <div className="max-w-2xl">
             <p className="section-label text-[rgba(255,255,255,0.7)] mb-5 animate-hero">
               Rio Rancho &amp; Albuquerque, NM · Since 1996
