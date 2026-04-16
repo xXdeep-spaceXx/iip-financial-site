@@ -201,6 +201,37 @@ export default function LifeInsurancePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Legal ── */}
+      <section className="section-border py-10 px-6 bg-bg2">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap gap-x-6 gap-y-1 mb-4">
+            <a href="/privacy-policy" className="footer-legal-link">Privacy Policy</a>
+            <a href="/terms" className="footer-legal-link">Terms &amp; Conditions</a>
+            <a href="/sitemap" className="footer-legal-link">Site Map</a>
+          </div>
+          <div className="footer-legal space-y-3">
+            <p>
+              *Proceeds from an insurance policy are generally income-tax-free, and if properly structured, may also be free from estate tax. Income-tax-free distributions are achieved by withdrawing to the cost basis (premiums paid), then using policy loans. Loans and withdrawals may generate an income tax liability, reduce available cash value, and reduce the death benefit, or cause the policy to lapse. This assumes the policy qualifies as life insurance and is not a modified endowment contract. The Host and its affiliates do not provide tax, legal or accounting advice. This material has been prepared for informational purposes only, and is not intended to provide, and should not be relied on for, tax, legal, or accounting advice. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. This content is not intended to serve as the basis for any investment or purchasing decisions, nor does it recommend or involve the purchase, holding, or sale of a security. All figures herein are hypothetical and for illustrative purposes only to explain general concepts. No figure is to be relied upon as being accurate nor a guarantee or projection and is meant only as a partial overview of some relevant features and benefits of general insurance products that may be in the marketplace, and whose availability will be dependent on the State of residence of the consumer, and their individual suitability for the product they are wanting to purchase. Where insurance products are mentioned, any and all guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company.
+            </p>
+            <p className="font-semibold">IMPORTANT CONSUMER INFORMATION</p>
+            <p>
+              This site is for informational purposes only and is not intended to be a solicitation for or offering of any product or investment. The offer for sale of an insurance product may only be conducted in a state where the agent is licensed and the product is approved for sale. The providing of investment advice relating to securities may only be done by a properly licensed individual operating through a licensed affiliate entity, unless otherwise exempt. Comments about past performance are not to be construed as a guarantee or assurance of future performance. This website may contain concepts that have legal, accounting and tax implications. We do not provide specific legal or tax advice, nor promote, market or recommend any tax plan or arrangement. Consult a tax/legal professional for guidance with your individual situation. No representations are made as to the accuracy or completeness of the information contained herein or any information contained in any link provided herein, nor does a consumer visiting the web site create an agent-client relationship.
+            </p>
+            <p>
+              By contacting Innovative Investment Professionals you may be offered information regarding the purchase of insurance products, including fixed index annuities and life.
+            </p>
+            <p>
+              Securities offered through World Equity Group, Inc., member{" "}
+              <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer" className="footer-legal-link">FINRA</a>
+              {" "}and{" "}
+              <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer" className="footer-legal-link">SIPC</a>
+              , a Registered Investment Adviser.
+            </p>
+            <p>Innovative Investment Professionals is not owned or controlled by World Equity Group, Inc.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

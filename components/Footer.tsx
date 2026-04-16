@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="flex flex-wrap gap-x-6 gap-y-1 mt-6">
           <a href="/privacy-policy" className="footer-legal-link">Privacy Policy</a>
           <a href="/terms" className="footer-legal-link">Terms &amp; Conditions</a>
-          <a href="/sitemap.xml" className="footer-legal-link">Site Map</a>
+          <a href="/sitemap" className="footer-legal-link">Site Map</a>
           <a
             href="https://brokercheck.finra.org/"
             target="_blank"
