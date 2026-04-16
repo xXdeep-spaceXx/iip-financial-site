@@ -335,16 +335,16 @@
     background-color: rgba(249, 247, 242, 0.90);
   }
 
-  /* Logo image pill — same purple as btn-primary */
+  /* Logo image pill — matches logo's own background color */
   .nav-logo-pill {
     display: inline-flex;
     align-items: center;
     padding: 6px 14px;
     border-radius: 9999px;
-    background: var(--accent);
+    background: #4f335a;
     transition: background 0.15s;
   }
-  .nav-logo-pill:hover { background: var(--accent-l); }
+  .nav-logo-pill:hover { background: #3d2847; }
 
   .nav-logo {
     color: var(--accent);
